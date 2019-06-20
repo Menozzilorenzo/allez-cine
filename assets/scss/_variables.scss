@@ -15,16 +15,22 @@ $blue: #007bff;
 $indigo: #6610f2;
 $purple: #6f42c1;
 $pink: #e83e8c;
-$red: #dc3545;
+$red: #fe4240;
 $orange: #fd7e14;
 $yellow: #ffc107;
 $green: #28a745;
 $teal: #20c997;
 $cyan: #17a2b8;
 
+$primary: $red;
+
 $colors: (); // Use this to add any colors to bootstrap.
 $theme-colors: (); // Use this to add any theme colors to bootstrap. (primary, danger, success, etc..)
 
 // SPACES & SIZES
-$spacers: (); // Use this to add any spaces to bootstrap. ("mt-*", "pt-*", etc etc)
+$spacer: 1rem !default;
+$spacers: (
+    1:($spacer*0.1),
+    6: ($spacer* 5.5)
+); // Use this to add any spaces to bootstrap. ("mt-*", "pt-*", etc etc)
 $sizes: (); // Use this to add any sizes to bootstrap. ("w-*", "h-*")
