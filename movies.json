@@ -1,0 +1,282 @@
+[
+	{
+		"ID": 1,
+		"poster": "assets/images/batmanmovie-2017-comedie.jpg",
+		"title": "Batman : the Lego movie",
+		"year": 2017,
+		"genre": ["comedy","adventure", "kids", "animation"],
+		"trailer":"https://www.youtube.com/watch?v=h6DOpfJzmo0"
+	},
+	{
+		"ID": 2,
+		"poster": "assets/images/hostel-2005-thriller.jpg",
+		"title": "Hostel",
+		"year": 2005,
+		"genre": ["horror"],
+		"trailer":"https://www.youtube.com/watch?v=4d5_lrn9v-g"
+	},
+	{
+		"ID": 3,
+		"poster": "assets/images/inception-2010-scifi.jpg",
+		"title": "Inception",
+		"year": 2010,
+		"genre": ["Thriller", "scifi", "action"],
+		"trailer":"https://www.youtube.com/watch?v=YoHD9XEInc0"
+	},
+	{
+		"ID": 4,
+		"poster": "assets/images/intouchables-2011-comedie.jpg",
+		"title": "Intouchables",
+		"year": 2011,
+		"genre": ["comedy","drama"],
+		"trailer":"https://www.youtube.com/watch?v=34WIbmXkewU"
+	},
+	{
+		"ID": 5,
+		"poster": "assets/images/lepatientanglais-1996-dramatique.jpg",
+		"title": "Le patient anglais",
+		"year": 1996,
+		"genre": ["drama", "romantic"],
+		"trailer":"https://www.youtube.com/watch?v=Xk_LRcOFT0c"
+	},
+	{
+		"ID": 6,
+		"poster": "assets/images/lesdeuxtours-2002-aventure.jpg",
+		"title": "The lord of the rings : The two towers",
+		"year": 2002,
+		"genre": ["adventure", "fantasy"],
+		"trailer":"https://www.youtube.com/watch?v=hYcw5ksV8YQ"
+	},
+	{
+		"ID": 7,
+		"poster": "assets/images/seven-1995-thriller.jpg",
+		"title": "Seven",
+		"year": 1995,
+		"genre": ["Thriller", "Horror"],
+		"trailer":"https://www.youtube.com/watch?v=znmZoVkCjpI"
+	},
+	{
+		"ID": 8,
+		"poster": "assets/images/shutterisland-2010-thriller.jpg",
+		"title": "Shutter island",
+		"year": 2010,
+		"genre": ["Thriller", "drama"],
+		"trailer":"https://www.youtube.com/watch?v=v8yrZSkKxTA"
+	},
+	{
+		"ID": 9,
+		"poster": "assets/images/starwarsempire-1980-scifi.jpg",
+		"title": "Star Wars : The empire strikes back",
+		"year": 1980,
+		"genre": ["scifi","adventure"],
+		"trailer":"https://www.youtube.com/results?search_query=empire+strikes+back+trailer"
+	},
+	{
+		"ID":10,
+		"poster": "assets/images/Survivestyle5-2004-comedie.jpg",
+		"title": "Survive style 5",
+		"year": 2004,
+		"genre": ["comedy"],
+		"trailer":"https://www.youtube.com/watch?v=LEH7nDkiPEk&t=25s"
+	},
+	{
+		"ID": 11,
+		"poster": "assets/images/swissarmyman-2016-comedie.jpg",
+		"title": "Swiss army man",
+		"year": 2016,
+		"genre": ["comedy"],
+		"trailer":"https://www.youtube.com/watch?v=yrK1f4TsQfM&t=22s"
+	},
+	{
+		"ID": 12,
+		"poster": "assets/images/thefall-2006-dramatique.jpg",
+		"title": "The fall",
+		"year": 2006,
+		"genre": ["drama"],
+		"trailer":"https://www.youtube.com/results?search_query=the+fall+trailer"
+	},
+	{
+		"ID": 13,
+		"poster": "assets/images/WhatWeDoInTheShadows-2014-comedie.jpg",
+		"title": "What we do in the shadows",
+		"year": 2014,
+		"genre": ["comedy"],
+		"trailer":"https://www.youtube.com/watch?v=IAZEWtyhpes&t=43s"
+	},
+	{
+		"ID": 14,
+		"poster": "assets/images/zoolander-2001-comedie.jpg",
+		"title": "Zoolander",
+		"year": 2001,
+		"genre": ["comedy"],
+		"trailer":"https://www.youtube.com/watch?v=MaEeSJZYkpY&t=10s"
+	},
+	{
+		"ID": 15,
+		"poster": "assets/images/Harrypotter-2001-fantasy.jpg",
+		"title": "Harry Potter and the philosopher's stone",
+		"year": 2001,
+		"genre": ["fantasy", "adventure", "kids"],
+		"trailer":"https://www.youtube.com/watch?v=VyHV0BRtdxo"
+	},
+	{
+		"ID": 16,
+		"poster": "assets/images/hungergames-2012-adventure.jpg",
+		"title": "Hunger games",
+		"year": 2012,
+		"genre": ["adventure", "action", "scifi"],
+		"trailer":"https://www.youtube.com/watch?v=mfmrPu43DF8"
+	},
+	{
+		"ID": 17,
+		"poster": "assets/images/2001spaceodyssey-1968-scifi.jpg",
+		"title": "2001: a space odyssey",
+		"year": 1968,
+		"genre": ["scifi"],
+		"trailer":"https://www.youtube.com/watch?v=oR_e9y-bka0"
+	},
+	{
+		"ID": 18,
+		"poster": "assets/images/captainamericacivilwar-2016-adventure.jpg",
+		"title": "Captain America : Civil war",
+		"year": 2016,
+		"genre": ["adventure", "action", "kids"],
+		"trailer":"https://www.youtube.com/watch?v=FkTybqcX-Yo"
+	},
+	{
+		"ID": 19,
+		"poster": "assets/images/ironman3-2013-adventure.jpg",
+		"title": "Iron man 3",
+		"year": 2013,
+		"genre": ["adventure", "action", "kids"],
+		"trailer":"https://www.youtube.com/watch?v=oYSD2VQagc4"
+	},
+	{
+		"ID": 20,
+		"poster": "assets/images/thefateandthefurious-2017-adventure.jpg",
+		"title": "The fate and the furious",
+		"year": 2017,
+		"genre": ["action"],
+		"trailer":"https://www.youtube.com/watch?v=JwMKRevYa_M"
+	},
+	{
+		"ID": 21,
+		"poster": "assets/images/incredibles2-2018-comedy.jpg",
+		"title": "The Incredibles 2",
+		"year": 2018,
+		"genre": ["adventure", "comedy", "kids", "action", "animation"],
+		"trailer":"https://www.youtube.com/watch?v=i5qOzqD9Rms"
+	},
+	{
+		"ID": 22,
+		"poster": "assets/images/beautyandthebeast-2017-fantasy.jpeg",
+		"title": "The Beauty and the Beast",
+		"year": 2017,
+		"genre": ["kids", "romantic", "fantasy"],
+		"trailer":"https://www.youtube.com/watch?v=e3Nl_TCQXuw"
+	},
+	{
+		"ID": 23,
+		"poster": "assets/images/frozen-2013-fantasy.jpg",
+		"title": "Frozen",
+		"year": 2013,
+		"genre": ["fantasy", "kids", "adventure", "animation"],
+		"trailer":"https://www.youtube.com/watch?v=TbQm5doF_Uc"
+	},
+	{
+		"ID": 24,
+		"poster": "assets/images/titanic-1997-drama.jpg",
+		"title": "Titanic",
+		"year": 1997,
+		"genre": ["drama","romantic"],
+		"trailer":"https://www.youtube.com/watch?v=2e-eXJ6HgkQ"
+	},
+	{
+		"ID": 25,
+		"poster": "assets/images/minions-2015-comedy.jpeg",
+		"title": "Minions",
+		"year": 2015,
+		"genre": ["comedy", "kids", "animation"],
+		"trailer":"https://www.youtube.com/watch?v=eisKxhjBnZ0"
+	},
+	{
+		"ID": 26,
+		"poster": "assets/images/theexorcist-1973-horror.jpg",
+		"title": "The exorcist",
+		"year": 1973,
+		"genre": ["horror"],
+		"trailer":"https://www.youtube.com/watch?v=YDGw1MTEe9k"
+	},
+	{
+		"ID": 27,
+		"poster": "assets/images/apocalypsenow-1979-war.jpg",
+		"title": "Apocalypse now",
+		"year": 1979,
+		"genre": ["war"],
+		"trailer":"https://www.youtube.com/watch?v=FTjG-Aux_yQ"
+	},
+	{
+		"ID": 28,
+		"poster": "assets/images/fullmetaljacket-1987-war.jpeg",
+		"title": "Full Metal Jacket",
+		"year": 1987,
+		"genre": ["war"],
+		"trailer":"https://www.youtube.com/watch?v=Ks_MbPPkhmA"
+	},
+	{
+		"ID": 29,
+		"poster": "assets/images/thething-1982-horror.jpg",
+		"title": "The thing",
+		"year": 1982,
+		"genre": ["horror"],
+		"trailer":"https://www.youtube.com/watch?v=5ftmr17M-a4"
+	},
+	{
+		"ID":30,
+		"poster": "assets/images/goodbadugly-1966-western.jpg",
+		"title": "The good, the bad and the ugly",
+		"year": 1966,
+		"genre": ["western"],
+		"trailer":"https://www.youtube.com/watch?v=WCN5JJY_wiA"
+	},
+	{
+		"ID": 31,
+		"poster": "assets/images/unforgiven-1992-western.jpg",
+		"title": "Unforgiven",
+		"year": 1992,
+		"genre": ["western"],
+		"trailer":"https://www.youtube.com/watch?v=ftTX4FoBWlE"
+	},
+	{
+		"ID":"32",
+		"poster": "assets/images/zoolander-2001-comedie.jpg",
+		"title": "",
+		"year": "",
+		"genre": [""],
+		"trailer":""
+	},
+	{
+		"ID":"33",
+		"poster": "assets/images/zoolander-2001-comedie.jpg",
+		"title": "",
+		"year": "",
+		"genre": [""],
+		"trailer":""
+	},
+	{
+		"ID":"34",
+		"poster": "assets/images/zoolander-2001-comedie.jpg",
+		"title": "",
+		"year": "",
+		"genre": [""],
+		"trailer":""
+	},
+	{
+		"ID":"35",
+		"poster": "assets/images/zoolander-2001-comedie.jpg",
+		"title": "",
+		"year": "",
+		"genre": [""],
+		"trailer":""
+	}
+]

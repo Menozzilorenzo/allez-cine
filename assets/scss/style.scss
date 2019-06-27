@@ -8,3 +8,207 @@
 
 // Pages..
 @import "pages/index";
+
+    h2{
+        padding-left: 20px;
+        padding-bottom: 15px;
+        padding-top : 5px;
+        margin-left: 210px;
+    }
+    .vl {
+        border-left: 5px solid #fe4240 ;
+        height: 2.5rem;
+      }
+      @media screen and (max-width: 600px){
+          h2{
+              margin-left: 0px;
+          }
+      }
+/*nav card*/
+    .nav-link{
+        margin-top: 20px;
+        background-color: lightgrey;
+        color:black;
+    }
+    #navbarDropdown{
+        background-color: #fe4240;
+        color:white;
+        border-radius: 0px;
+    }
+    
+    .nav-pills .nav-link.active{
+        background-color: #fe4240 ;
+
+    }
+    .nav-pills .nav-link{
+        border-radius: 0px;
+        margin-left: 1px;
+        margin-right:1px;
+    }
+    @media screen and (max-width: 600px) {
+        #pills-tab{
+            display: none;
+        }
+      }
+    .nav-tabs .nav-item{
+        margin-bottom: 15px;
+    }
+/*fin navcard*/
+    /*card*/
+    .col-9{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    @media screen and (max-width: 600px){
+        .col-9{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+    }
+    .card{
+        border-style: none;
+        border-radius: 0px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    @media screen and (max-width: 600px){
+        .card{
+            box-shadow: 0px 0px 10px black;
+            padding: 0px;
+        }
+    }
+    .card-img-top{
+        border-radius: 0px;
+    }
+    .gallerie{
+        justify-content: center;
+    }
+@media screen and (max-width: 600px){
+    .container{
+        background-color: lightgray;
+    }
+    }
+    .card-body{
+        padding:0px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+    }
+    .title{
+        font-size: 20px;
+        text-transform: capitalize;
+        text-align: center;
+        color: gray;
+    }
+    .year{
+        font-size: 15px;
+        text-align: left;
+        color: gray;
+    }
+    .btn-primary:hover{
+        background-color: #fe4240 ;
+    }
+    @media screen and (max-width: 600px){
+        .btn-primary:hover{
+            box-shadow: 0px 0px 5px black;
+        }
+    }
+    /*fin cards*/
+    /*modal*/
+    .modal-header{
+        background-color: #fe4240 ;
+    }
+    .modal-title{
+        color: white;
+    }
+    .modal-body{
+        padding : 2rem;
+        padding-bottom: 1rem;
+    }
+    .modal-text{
+        color: grey;
+    }
+    .summary{
+        background-color: lightgray;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .modal-footer{
+        background-color: grey;
+    }
+    .btn.btn-secondary{
+        background-color: lightgrey;
+        color: black;
+    }
+    /*fin modal*/
+
+    /*buttonmore*/
+    .btn.btn-secondary{
+        background-color: #fe4240;
+        color: white;
+        text-transform: uppercase;
+        border-radius: 0px;
+        border-style: none;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    /*fin buttonmore*/
+    /*shop*/
+    .container2{
+        max-width: 1600px;;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+        .shopcard{
+        border-style: none;
+        border-radius: 0px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 0px;
+        box-shadow: 0px 3px 1px grey;
+
+    }
+    .shopcard:hover{
+        box-shadow: 0px 3px 3px #fe4240;
+    }
+    .shopcardbody{
+        background-color: lightgrey;
+        margin-bottom: 0px;
+        margin-left: 0px;
+
+    }
+    .prize{
+        text-align: right;
+        font-size: 15px;
+        color: red;
+    }
+    .selectshop{
+        background-color: black;
+    }
+    .subselectshop{
+        height: 50%;
+    }
+    .titlecolshop{
+        color: #fe4240;
+        font-size: 90%;
+        padding-left: 4%;
+        vertical-align: top;
+        padding-bottom: 10px;
+    }
+    .leftcolshop{
+        color: #fe4240;
+        font-size: 90%;
+        padding-left: 5%;
+        vertical-align: middle;
+    }
+    .rightcolshop{
+        color: lightgrey;
+        font-size: 80%;
+        padding-right: 5%;
+    }
+    /*fin shop*/
