@@ -122,19 +122,36 @@
         color: white;
     }
     .modal-body{
-        padding : 2rem;
-        padding-bottom: 1rem;
+        padding: 0rem;
+        background-color: white;
+        
     }
     .modal-text{
         color: grey;
     }
     .summary{
-        background-color: lightgray;
-        padding: 10px;
+        color: black;
+        padding: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
         border-radius: 5px;
+        text-align: justify;
     }
-    .modal-footer{
-        background-color: grey;
+    .modal-director{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .modal-year{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .modal-genre{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .modal-actors{
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .btn.btn-secondary{
         background-color: lightgrey;
@@ -180,13 +197,11 @@
         background-color: rgb(231, 231, 231);
         margin-bottom: 0px;
         margin-left: 0px;
-
     }
     .prize{
         text-align: right;
         font-size: 15px;
         color: red;
-
     }
     .selectshop{
         background-color: black;
