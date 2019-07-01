@@ -10,14 +10,14 @@
 @import "pages/index";
 
     h2{
-        padding-left: 20px;
+        padding-left: 15px;
         padding-bottom: 15px;
-        padding-top : 5px;
+        padding-top : 8px;
         margin-left: 210px;
     }
     .vl {
         border-left: 5px solid #fe4240 ;
-        height: 2.5rem;
+        height: 3.0rem;
       }
       @media screen and (max-width: 600px){
           h2{
@@ -177,7 +177,7 @@
         box-shadow: 0px 3px 3px #fe4240;
     }
     .shopcardbody{
-        background-color: lightgrey;
+        background-color: rgb(231, 231, 231);
         margin-bottom: 0px;
         margin-left: 0px;
 
@@ -186,13 +186,12 @@
         text-align: right;
         font-size: 15px;
         color: red;
+
     }
     .selectshop{
         background-color: black;
     }
-    .subselectshop{
-        height: 50%;
-    }
+
     .titlecolshop{
         color: #fe4240;
         font-size: 90%;
@@ -210,5 +209,9 @@
         color: lightgrey;
         font-size: 80%;
         padding-right: 5%;
+    }
+    .shoptitle{
+        font-weight: bold;
+        font-size: 93%;
     }
     /*fin shop*/
