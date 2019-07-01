@@ -1,7 +1,7 @@
 //Change the color of "genre" on click
 let change = document.getElementById('changeColor');
 change.addEventListener('click', () => {
-    change.style.backgroundColor='black'
+    alert('dskjvqkj')
 });
 
 // When the user scrolls down 20px from the top of the document, show the button

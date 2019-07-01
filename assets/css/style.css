@@ -10583,25 +10583,27 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 0px 50px 50px 0px;
   top: 250px;
   left: -71px;
-  width: 100px;
-  height: 30px;
+  width: 110px;
+  height: 40px;
   z-index: 98;
-  -webkit-transition: 2s;
-  -o-transition: 2s;
-  transition: 2s;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
 }
 
-.button1 :hover {
-  left: 0px;
+.button1:hover {
+  -webkit-transform: translateX(70px);
+      -ms-transform: translateX(70px);
+          transform: translateX(70px);
 }
 
 .circle1 {
   position: relative;
   left: 72px;
-  bottom: 21.5px;
+  bottom: 20px;
   background: white;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50px;
   z-index: 99;
   text-align: center;
@@ -10613,18 +10615,27 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 0px 50px 50px 0px;
   top: 300px;
   left: -71px;
-  width: 100px;
-  height: 30px;
+  width: 110px;
+  height: 40px;
   z-index: 98;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.button2:hover {
+  -webkit-transform: translateX(70px);
+      -ms-transform: translateX(70px);
+          transform: translateX(70px);
 }
 
 .circle2 {
   position: relative;
   left: 72px;
-  bottom: 21.5px;
+  bottom: 20px;
   background: white;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50px;
   z-index: 99;
   text-align: center;
@@ -10636,18 +10647,27 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 0px 50px 50px 0px;
   top: 350px;
   left: -71px;
-  width: 100px;
-  height: 30px;
+  width: 110px;
+  height: 40px;
   z-index: 98;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.button3:hover {
+  -webkit-transform: translateX(70px);
+      -ms-transform: translateX(70px);
+          transform: translateX(70px);
 }
 
 .circle3 {
   position: relative;
   left: 72px;
-  bottom: 21.5px;
+  bottom: 20px;
   background: white;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50px;
   z-index: 99;
   text-align: center;
@@ -10659,9 +10679,18 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 0px 50px 50px 0px;
   top: 400px;
   left: -71px;
-  width: 100px;
-  height: 30px;
+  width: 110px;
+  height: 40px;
   z-index: 98;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.button4:hover {
+  -webkit-transform: translateX(70px);
+      -ms-transform: translateX(70px);
+          transform: translateX(70px);
 }
 
 .circle4 {
@@ -10669,8 +10698,8 @@ a.text-dark:hover, a.text-dark:focus {
   left: 72px;
   bottom: 21.5px;
   background: white;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50px;
   z-index: 99;
   text-align: center;
@@ -10688,6 +10717,32 @@ a.text-dark:hover, a.text-dark:focus {
 
 .red {
   background: #fe4240;
+}
+
+.searchbar {
+  border-radius: 0px 50px 50px 0px;
+}
+
+.imgs {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 25px;
+  height: 5px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  opacity: 1;
+}
+
+.carousel-indicators .active {
+  width: 30px;
+  height: 6px;
+  background-color: #fe4240;
 }
 
 .btn-secondary {
@@ -10748,28 +10803,6 @@ input[type="text"]::placeholder {
 
 .navbar-toggler {
   background: #fe4240;
-}
-
-.imgs {
-  -webkit-filter: brightness(50%);
-          filter: brightness(50%);
-}
-
-.carousel-indicators li {
-  display: inline-block;
-  width: 25px;
-  height: 5px;
-  margin: 10px;
-  cursor: pointer;
-  border: none;
-  background-color: white;
-  opacity: 1;
-}
-
-.carousel-indicators .active {
-  width: 30px;
-  height: 6px;
-  background-color: #fe4240;
 }
 
 .black {
