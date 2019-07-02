@@ -1,3 +1,16 @@
+// SETTINGS (DO NOT TOUCH IF YOU DO NOT KNOW WHAT YOU ARE DOING!)
+$enable-caret: true;
+$enable-rounded: false;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-prefers-reduced-motion-media-query: true;
+$enable-grid-classes: true;
+$enable-pointer-cursor-for-buttons: true;
+$enable-responsive-font-sizes: true;
+$enable-validation-icons: true;
+$enable-deprecation-messages: false;
+
 // COLORS & THEMES
 $white: #fff;
 $gray-100: #f8f9fa;
@@ -15,16 +28,48 @@ $blue: #007bff;
 $indigo: #6610f2;
 $purple: #6f42c1;
 $pink: #e83e8c;
-$red: #dc3545;
+$red: #fe4240;
 $orange: #fd7e14;
 $yellow: #ffc107;
 $green: #28a745;
 $teal: #20c997;
 $cyan: #17a2b8;
-
 $colors: (); // Use this to add any colors to bootstrap.
-$theme-colors: (); // Use this to add any theme colors to bootstrap. (primary, danger, success, etc..)
+
+$primary: $red;
+$secondary: $gray-600;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
+
+$theme-colors: (
+	facebook: #3b5998,
+	twitter: #1da1f2,
+	google: #dd4b39,
+	dribbble: #ea4c89,
+	semi-transparent: rgba($white, 0.5),
+);
 
 // SPACES & SIZES
-$spacers: (); // Use this to add any spaces to bootstrap. ("mt-*", "pt-*", etc etc)
-$sizes: (); // Use this to add any sizes to bootstrap. ("w-*", "h-*")
+$spacer: 1rem !default;
+// Use this to add any spaces to bootstrap. ("mt-*", "pt-*", etc etc)
+$spacers: (
+	6: (
+		$spacer * 3.5,
+	),
+	7: (
+		$spacer * 4,
+	),
+	8: (
+		$spacer * 4.5,
+	),
+	9: (
+		$spacer * 5,
+	),
+);
+
+// Use this to add any sizes to bootstrap. ("w-*", "h-*")
+$sizes: ();
