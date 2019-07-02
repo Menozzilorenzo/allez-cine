@@ -10527,7 +10527,24 @@ h2, .h2 {
 }
 
 /*fin shop*/
-/*
+/*CONTACT US*/
+.map-body {
+  padding: 0.50rem;
+}
 
+.map-container-7 {
+  overflow: hidden;
+  padding-bottom: 20%;
+  position: relative;
+  height: 0;
+}
 
-    */
+.map-container-7 iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+/*FIN CONTACT US*/
