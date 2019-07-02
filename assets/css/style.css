@@ -10723,6 +10723,10 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 0px 50px 50px 0px;
 }
 
+.changeColor:active {
+  background-color: #fe4240;
+}
+
 .imgs {
   -webkit-filter: brightness(50%);
           filter: brightness(50%);
@@ -10842,10 +10846,34 @@ footer a {
   height: 7%;
 }
 
+.connectus {
+  color: white;
+}
+
 .socialmediasbutton {
   background: none;
   border: 1px white solid;
   border-radius: 0px;
   width: 3%;
   height: auto;
+  color: white;
+}
+
+.socialmediasbutton:hover {
+  background-color: white;
+  border: 1px black solid;
+}
+
+.socialmediasbutton:hover i {
+  color: black !important;
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.fab {
+  color: white;
 }

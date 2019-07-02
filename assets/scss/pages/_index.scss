@@ -140,6 +140,9 @@
 .searchicon{
     
 }
+.changeColor:active{
+    background-color: #fe4240;
+}
 //Carrousel
 .imgs {
     filter: brightness(50%)
@@ -243,11 +246,28 @@ footer a {
     width: auto;
     height: 7%
 }
-
+.connectus{
+    color:white;
+}
 .socialmediasbutton {
     background: none;
     border: 1px white solid;
     border-radius: 0px;
     width: 3%;
     height: auto;
+    color: white;
+}
+.socialmediasbutton:hover{
+    background-color: white;
+    border: 1px black solid;
+    & i {
+        color: black !important;
+        transform: scale(1.5);
+        transition: all 0.5s;
+    }
+    
+}
+.fab{
+    color:white;
+    
 }
