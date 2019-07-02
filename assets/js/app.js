@@ -7,12 +7,14 @@ const Genres = {
   movie: [],
   serie: []
 };
+
 const Promises = {
   movie: {},
   serie: {}
 };
+
 const Settings = {
-  debug: false,
+  debug: true,
   api: {
     language: "en",
     key: "c0899f4d6321bdbd97b6173b1b1341d5",
@@ -115,6 +117,8 @@ Promises.movie.genre = TheMovieDB.request("genre/movie/list").then($response => 
   $response.genres.forEach($genre => {
     Genres.movie[$genre.id] = $genre.name;
   });
+
+  footerReviewMovie('#footer-review-movie-target', '#footer-review-movie-template');
 });
 
 Promises.serie.genre = TheMovieDB.request("genre/tv/list").then($response => {
@@ -137,7 +141,7 @@ Promises.movie.now = TheMovieDB.request("movie/now_playing").then($response => {
 
 Promises.movie.discover = TheMovieDB.request("discover/movie").then($response => {
   if (Settings.debug) console.log("Movie:Discover", $response.results);
-  Promise.all([Promises.movie.genre]).then(() => {
+  Promise.all([Promises.movie.genre]).then(($resources) => {
     listMovies("movie", $response.results, "#movie-featured-target", "#movie-featured-template", 0, 18);
   });
 });
@@ -145,6 +149,16 @@ Promises.movie.discover = TheMovieDB.request("discover/movie").then($response =>
 Promises.movie.popular = TheMovieDB.request("movie/popular").then($response => {
   if (Settings.debug) console.log("Movie:Popular", $response.results);
   createCarousel($response.results, "#carousel-template", "#carousel-target", 3);
+});
+
+Promises.movie.popular = TheMovieDB.request("movie/upcoming").then($response => {
+  if (Settings.debug) console.log("Movie:Upcoming", $response.results);
+  footerLatestMovie($response.results, '#footer-latest-movie-target', '#footer-latest-movie-template', 4);
+});
+
+Promises.movie.popular = TheMovieDB.request("movie/top_rated").then($response => {
+  if (Settings.debug) console.log("Movie:Top", $response.results);
+  footerTopRatedMovie($response.results, '#footer-top-rated-target', '#footer-top-rated-template', 6);
 });
 
 ///////////////////
@@ -286,6 +300,49 @@ const attachModal = ($id, $type) => {
       });
     }
   });
+};
+
+const footerLatestMovie = ($resources, $target, $template, $amount = 4) => {
+  let target = document.querySelector($target);
+  let template = document.querySelector($template);
+  $resources.slice(0, $amount).forEach($resource => {
+    let main = template.cloneNode(true).content,
+      image = main.querySelector("img"),
+      title = main.querySelector("#title");
+
+    title.innerHTML = $resource.title;
+    image.setAttribute("src", TheMovieDB.image($resource.poster_path, "w300"));
+
+    target.appendChild(main);
+  })
+};
+
+const footerReviewMovie = ($target, $template) => {
+  let target = document.querySelector($target);
+  let template = document.querySelector($template);
+  Genres.movie.forEach($genre => {
+    let main = template.cloneNode(true).content,
+      link = main.querySelector('a#link');
+
+    link.appendChild(document.createTextNode($genre));
+    link.setAttribute('href', `#${$genre}`);
+
+    target.appendChild(main);
+  })
+};
+
+const footerTopRatedMovie = ($resources, $target, $template, $amount = 6) => {
+  let target = document.querySelector($target);
+  let template = document.querySelector($template);
+  $resources.slice(0, $amount).forEach($resource => {
+    let main = template.cloneNode(true).content,
+      image = main.querySelector('img');
+
+    image.setAttribute("src", TheMovieDB.image($resource.poster_path, "w500"));
+    image.setAttribute('alt', $resource.title);
+
+    target.appendChild(image);
+  })
 };
 
 let lastPushedSerieFilter = null;
