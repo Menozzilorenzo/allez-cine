@@ -95,7 +95,7 @@
         margin-left: 5px;
     }
     .title{
-        font-size: 20px;
+        font-size: 15px;
         text-transform: capitalize;
         text-align: center;
         color: gray;
@@ -123,7 +123,7 @@
     }
     .modal-body{
         padding: 0rem;
-        background-color: white;
+        background-color: white; 
         
     }
     .modal-text{
@@ -171,42 +171,48 @@
     }
     /*fin buttonmore*/
     /*shop*/
+
     .container2{
-        max-width: 1600px;;
+        max-width: 1550px;;
         width: 100%;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 40px;
     }
-        .shopcard{
+    .shopcard{
         border-style: none;
         border-radius: 0px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        margin-left: 5px;
-        margin-right: 5px;
-        padding: 0px;
-        box-shadow: 0px 3px 1px grey;
-
-    }
-    .shopcard:hover{
-        box-shadow: 0px 3px 3px #fe4240;
+        margin-bottom: 0px;
+        padding: .375rem .30rem;
+        &:hover{
+            .prize{
+                color: white;
+            }
+        }
     }
     .shopcardbody{
-        background-color: rgb(231, 231, 231);
+        padding: 0.80rem;
+        padding-bottom: 1.75rem;
         margin-bottom: 0px;
-        margin-left: 0px;
+        font-size: 95%;
+        color: gray;
+    }
+    .shoptitle{
+        margin-bottom: 5px;
     }
     .prize{
-        text-align: right;
         font-size: 15px;
+        text-align: right;
         color: red;
     }
     .selectshop{
         background-color: black;
     }
-
+    .subselectshop{
+        height: 50%;
+    }
     .titlecolshop{
         color: #fe4240;
         font-size: 90%;
@@ -219,14 +225,16 @@
         font-size: 90%;
         padding-left: 5%;
         vertical-align: middle;
+        font-weight: bold;
     }
     .rightcolshop{
         color: lightgrey;
         font-size: 80%;
         padding-right: 5%;
-    }
-    .shoptitle{
-        font-weight: bold;
-        font-size: 93%;
-    }
+}
+
     /*fin shop*/
+    /*
+
+
+    */
