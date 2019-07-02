@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>AllezCine</title>
+
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+  <!-- CSS FILES -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body class="d-none">
+
+  <!-- ========= SOCIAL BUTTONS ========= -->
+  <div class="d-inline">
+    <a target="_blank" href="https://twitter.com">
+      <div class="social-button twitter">
+        <span>Twitter</span>
+        <div class="icon">
+          <i class="fab fa-twitter align-middle"></i>
+        </div>
+      </div>
+    </a>
+    <a target="_blank" href="https://facebook.com">
+      <div class="social-button facebook">
+        <span>Facebook</span>
+        <div class="icon">
+          <i class="fab fa-facebook-f align-middle"></i>
+        </div>
+      </div>
+    </a>
+    <a target="_blank" href="https://dribbble.com">
+      <div class="social-button dribbble">
+        <span>Dribbble</span>
+        <div class="icon">
+          <i class="fas fa-basketball-ball align-middle"></i>
+        </div>
+      </div>
+    </a>
+    <a target="_blank" href="https://google.com">
+      <div class="social-button google">
+        <span>Google+</span>
+        <div class="icon">
+          <i class="fab fa-google-plus-g align-middle"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ========= HEADER ========= -->
+  <header>
+    <div class="jumbotron p-0 m-0">
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand font-weight-bold text-uppercase" href="index.html"> <span
+              class="text-primary">ALLEZ</span>CINE! </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto d-flex justify-content-center">
+              <li class="nav-item mr-2 active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle bg-semi-transparent" tabindex="1" href="#" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Genre
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Aventure</a>
+                  <a class="dropdown-item" href="#">Comédie</a>
+                  <a class="dropdown-item" href="#">Dramatique</a>
+                  <a class="dropdown-item" href="#">Horreur</a>
+                  <a class="dropdown-item" href="#">Romantique</a>
+                  <a class="dropdown-item" href="#">Sci-fi</a>
+                  <a class="dropdown-item" href="#">Thriller</a>
+                  <a class="dropdown-item" href="#">Western</a>
+                </div>
+              </li>
+              <li class="nav-item ml-1">
+                <a class="nav-link bg-semi-transparent" href="#">Latest</a>
+              </li>
+              <li class="nav-item ml-1">
+                <a class="nav-link bg-semi-transparent" href="#">Popular</a>
+              </li>
+              <li class="nav-item ml-7">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+
+            <form class="navbar-form form-inline navbar-right">
+              <div class="input-group search-box">
+                <input type="text" id="search" class="form-control" placeholder="Search.." />
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- CAROUSEL -->
+      <div id="carousel-popular" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-popular" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-popular" data-slide-to="1"></li>
+          <li data-target="#carousel-popular" data-slide-to="2"></li>
+          <li data-target="#carousel-popular" data-slide-to="3"></li>
+        </ol>
+        <div id="carousel-target" class="carousel-inner">
+          <template id="carousel-template">
+            <div class="carousel-item">
+              <img class="img-fluid" />
+              <div class="carousel-caption d-none d-md-block">
+                <h3 id="title">Second slide label</h3>
+                <p id="overview">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a id="link" class="btn btn-primary text-uppercase mb-5" href="" target="_blank">WATCH TRAILER</a>
+              </div>
+            </div>
+          </template>
+          <div class="carousel-item active">
+            <img class="img-fluid"
+              src="https://images.unsplash.com/photo-1546652328-6a466f71e793?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80"
+              alt="" />
+            <div class="carousel-caption d-none d-md-block">
+              <h1>
+                <p>LATEST <span class="text-primary">ON</span>LINE <span class="text-primary">MO</span>VIES</p>
+              </h1>
+              <a class="btn btn-primary text-uppercase mb-5" href="#movie-featured">DISCOVER MOVIE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-primary p-1 text-white">
+      <div class="mx-5">
+        <span class="mr-5"> <i class="fas fa-phone-alt"></i>&nbsp;(+000) 009 455 4088</span>
+        <a href="" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#login-modal">LOGIN</a>
+        <a href="" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#register-modal">REGISTER</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========= MAIN ========= -->
+  <main class="py-2">
+    <div class="container-fluid">
+      <!-- MOVIES:NOW -->
+      <div id="movie-now">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-9">
+            <div class="card p-2">
+              <div class="card-body">
+                <div class="row" id="movie-now-target">
+                  <template id="movie-now-template">
+                    <div id="item" class="col">
+                      <div class="text-center">
+                        <img class="img-fluid" src="" alt="" />
+                        <h6 id="title" class="mt-2 text-muted"></h6>
+                        <div class="d-none d-md-none d-lg-block">
+                          <span id="year" class="float-left"></span>
+                          <span id="genre" class="float-right"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOVIES:FEATURED -->
+      <div id="movie-featured">
+        <div class="row mt-6 justify-content-center">
+          <div class="col-11">
+            <h2 class="p-3 text-gray-700 font-weight-bold border-left border-primary border-1">FEATURED MOVIES</h2>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="p-3 col-9">
+            <div class="btn-toolbar" role="toolbar" id="movie-featured-filter-target">
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="0">All</button>
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="28">Action</button>
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="12">Adventure</button>
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="27">Horror</button>
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="878">Science-Fiction</button>
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="16">Animation</button>
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="53">Thriller</button>
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="18">Drama</button>
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="80">Crime</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-9">
+            <div class="row d-flex" id="movie-featured-target">
+              <template id="movie-featured-template">
+                <div id="item" class="col-12 col-md-6 col-lg-4 col-xl-2 mb-4 text-center movie">
+                  <img class="img-fluid" />
+                  <h5 id="title" class="d-none d-md-none d-lg-block"></h5>
+                  <div class="d-none d-md-none d-lg-block">
+                    <span id="year" class="float-left"></span>
+                    <span id="genre" class="float-right"></span>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="row mt-1 justify-content-center">
+          <div class="col-2">
+            <button class="btn btn-primary btn-block">More</button>
+          </div>
+        </div> -->
+      </div>
+
+      <!-- SERIES:FEATURED -->
+      <div id="serie-featured">
+        <div class="row mt-6 justify-content-center">
+          <div class="col-11">
+            <h2 class="p-3 text-gray-700 font-weight-bold border-left border-primary border-1">FEATURED SERIES</h2>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="p-3 col-9">
+            <div class="btn-group" role="toolbar" id="serie-featured-filter-target">
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="0">All</button>
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="16">Animation</button>
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="18">Drama</button>
+              <button type="button" class="btn btn-light mr-1 mb-1" data-genre="80">Crime</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-9">
+            <div class="row" id="serie-featured-target">
+              <template id="serie-featured-template">
+                <div id="item" class="col-12 col-md-6 col-lg-4 col-xl-2 mb-4 text-center serie">
+                  <img class="img-fluid rounded mx-auto d-block" />
+                  <h5 id="title"></h5>
+                  <div class="d-none d-md-none d-lg-block text-center">
+                    <span id="year" class="float-left"></span>
+                    <span id="genre" class="float-right"></span>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="row mt-1 justify-content-center">
+          <div class="col-2">
+            <button class="btn btn-primary btn-block">More</button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ========= FOOTER ========= -->
+  <footer class="p-3">
+    <div class="container-fluid">
+      <!-- SUBSCRIBE TO USE -->
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-4 text-center">
+          <h2 class="text-primary">SUBSCRIBE TO US</h2>
+          <form>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Enter your email" />
+              <button class="btn btn-primary pb-1 pt-1 ml-1">
+                SUBSCRIBE
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="row">
+            <!-- RELEASES -->
+            <div class="col-6">
+              <h4 class="text-white text-uppercase mt-5 mb-4">
+                RELEASES
+              </h4>
+              <hr />
+              <ul class="list-unstyled">
+                <li><a href="" class="text-gray-500">2019</a></li>
+                <li><a href="" class="text-gray-500">2018</a></li>
+                <li><a href="" class="text-gray-500">2017</a></li>
+                <li><a href="" class="text-gray-500">2016</a></li>
+                <li><a href="" class="text-gray-500">2015</a></li>
+                <li><a href="" class="text-gray-500">2014</a></li>
+              </ul>
+            </div>
+            <!-- MOVIES -->
+            <div class="col-6">
+              <h4 class="text-white text-uppercase mt-5 mb-4">
+                MOVIES
+              </h4>
+              <hr />
+              <ul class="list-unstyled">
+                <li><a href="" class="text-gray-500">Aventure</a></li>
+                <li><a href="" class="text-gray-500">Comédie</a></li>
+                <li><a href="" class="text-gray-500">Dramatique</a></li>
+                <li><a href="" class="text-gray-500">Horreur</a></li>
+                <li><a href="" class="text-gray-500">Romantique</a></li>
+                <li><a href="" class="text-gray-500">Sci-fi</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
+          <div class="row">
+            <!-- REVIEW MOVIES -->
+            <div class="col-6">
+              <h4 class="text-white text-uppercase mt-5 mb-4">
+                REVIEW MOVIES
+              </h4>
+              <hr />
+              <div id="footer-review-movie-target">
+                <template id="footer-review-movie-template">
+                  <a id="link" href="#" class="badge badge-dark p-2 mb-2"></a>
+                </template>
+              </div>
+            </div>
+            <!-- LATEST MOVIES -->
+            <div class="col-6">
+              <h4 class="text-white text-uppercase mt-5 mb-4">
+                LATEST MOVIES
+              </h4>
+              <hr />
+              <div id="footer-latest-movie-target">
+                <template id="footer-latest-movie-template">
+                  <div class="d-flex mb-2">
+                    <img src="" alt="" width="50" style="object-fit: contain" />
+                    <span id="title" class="text-white ml-3"></span>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-2">
+          <h4 class="text-white text mt-5 mb-4"><span class="text-primary">ALLEZ</span>CINE</h4>
+          <hr />
+          <div id="footer-top-rated-target" class="d-flex flex-wrap flex-fill">
+            <template id="footer-top-rated-template">
+              <img class="flex-fill" src="" alt="" width="80">
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== RGPD ====== -->
+  <div class="banner-privacy">
+    <div>
+      <p>
+        We use cookies to <b>provide</b> and <b>improve</b> our services. By using our site, you <b>accept</b>
+        cookies.
+        <a class="privacy-accept" href="#">Accept</a>
+        <a rel="nofollow" class="privacy-learn" target="_blank" href="https://www.cookiesandyou.com/">Learn more</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ========= MODALS ========= -->
+  <!-- MOVIE:DETAILS -->
+  <div class="modal fade" id="detail-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span class="text-white" aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <iframe class="mt-n1" id="trailer" width="100%" height="315" frameborder="0"></iframe>
+        <div class="modal-body">
+          <p id="overview" class="text-justify"></p>
+          <div class="text-gray-600">
+            <div id="release"></div>
+            <div id="genres"></div>
+            <div id="casts"></div>
+            <div id="crews"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary font-weight-bold" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- AUTH:LOGIN -->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login to your account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-id-badge"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="d-flex justify-content-between">
+            <a class="" href="">Lost password ?</a>
+            <a href="">Create an account</a>
+          </div>
+          <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Stay connected ?</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success">Login</button>
+        </div>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- AUTH:REGISTER -->
+  <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Register a new account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope-open-text"></i></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Email adress" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Confirm password" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1"><a href="">
+                          Terms of Service</a></label>
+                </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS FILES -->
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/bootstrap"></script>
+  <script src="https://kit.fontawesome.com/efb976df6a.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>

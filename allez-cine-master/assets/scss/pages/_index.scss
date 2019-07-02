@@ -1,0 +1,167 @@
+// SOCIAL BUTTON
+.social-button {
+	position: fixed;
+	border-radius: 0px 50px 50px 0px;
+	width: 110px;
+	height: 40px;
+	left: -71px;
+	transition-duration: 0.5s;
+	z-index: 98;
+	text-align: center;
+
+	& span {
+		position: relative;
+		top: 7px;
+		font-size: 14px !important;
+	}
+
+	& .icon {
+		position: relative;
+		right: 5px;
+		top: 5px;
+		float: right;
+		background: $white;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		z-index: 99;
+		text-align: center;
+		color: $gray-900;
+
+		& i {
+			position: relative;
+			top: 1px;
+		}
+	}
+
+	&.twitter {
+		background-color: map-get($theme-colors, twitter);
+		top: 150px;
+		color: $white;
+
+		&:hover {
+			transform: translateX(70px);
+		}
+	}
+
+	&.facebook {
+		background-color: map-get($theme-colors, facebook);
+		top: 200px;
+		color: $white;
+
+		&:hover {
+			transform: translateX(70px);
+		}
+	}
+
+	&.dribbble {
+		background-color: map-get($theme-colors, dribbble);
+		top: 250px;
+		color: $white;
+
+		&:hover {
+			transform: translateX(70px);
+		}
+	}
+
+	&.google {
+		background-color: map-get($theme-colors, google);
+		top: 300px;
+		color: $white;
+
+		&:hover {
+			transform: translateX(70px);
+		}
+	}
+}
+
+// NAVBAR
+
+.changeColor:focus{
+	background-color: $primary !important;
+}
+// SCROLL UP
+.scroll-up {
+	position: fixed;
+	bottom: 13px;
+	right: 20px;
+	display: block;
+	text-decoration: none;
+	border-radius: 50%;
+	opacity: 0;
+	transition: all 0.3s ease;
+	background-color: $primary;
+	padding: 10px;
+	z-index: 999 !important;
+
+	&:hover {
+		background-color: lighten($primary, 10);
+		cursor: pointer;
+	}
+
+	& i {
+		color: $white;
+		position: relative;
+		font-size: 36px;
+		transition: all 0.3s ease;
+		margin-top: 2px;
+	}
+}
+
+// GDPR
+.banner-privacy {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	overflow: hidden;
+	padding: 1rem 0.5rem;
+	background: $white;
+	z-index: 999 !important;
+	color: $gray-700;
+	font-size: 14px;
+	display: none;
+	border-top: solid 3px $primary;
+
+	& a {
+		text-decoration: none;
+		margin: 20px auto 0 auto;
+		display: block;
+		max-width: 150px;
+	}
+
+	& p {
+		margin: 0;
+		color: $gray-700;
+		text-align: center;
+	}
+
+	& .privacy-learn {
+		color: $gray-900;
+
+		&:hover {
+			color: lighten($black, 50);
+		}
+	}
+
+	& .privacy-accept {
+		padding: 7px 15px;
+		color: $white;
+		border-radius: 5px;
+		background: $primary;
+
+		&:hover {
+			background-color: lighten($primary, 10);
+		}
+	}
+
+	@include breakpoint-up(md) {
+		padding: 1.5rem 0.5rem;
+
+		& a {
+			display: inline-block;
+			margin: 0 10px;
+		}
+	}
+}

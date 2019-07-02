@@ -1,0 +1,15 @@
+@import "variables";
+
+//** === VENDORS === **//
+@import "vendors/bootstrap/bootstrap";
+
+//** === COMPONENTS === **//
+@import "components/mixins";
+@import "components/typography";
+
+//** === ELEMENTS === **//
+@import "elements/header";
+@import "elements/footer";
+
+//** === PAGES === **//
+@import "pages/index";

@@ -1,0 +1,19 @@
+//** === BREAKPOINTS === **//
+
+@mixin breakpoint-down($breakpoint) {
+    @include media-breakpoint-down($breakpoint) {
+        @content;
+    }
+}
+
+@mixin breakpoint-between($fromBreakpoint, $toBreakpoint) {
+    @include media-breakpoint-between($fromBreakpoint, $toBreakpoint) {
+        @content;
+    }
+}
+
+@mixin breakpoint-up($breakpoint) {
+    @include media-breakpoint-up($breakpoint) {
+        @content;
+    }
+}
