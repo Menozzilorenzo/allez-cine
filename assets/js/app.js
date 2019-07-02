@@ -2,10 +2,26 @@
 ///// VARIABLES
 ////////////////////
 
+let lastPushedSerieFilter = undefined;
+let lastPushedMovieFilter = undefined;
+let currentPreview = undefined;
+
 const TheMovieDB = {};
 const Genres = {
   movie: [],
   serie: []
+};
+
+const Movies = {
+  now: [],
+  discover: [],
+  popular: [],
+  topRated: [],
+  upComing: []
+};
+
+const Series = {
+  discover: []
 };
 
 const Promises = {
@@ -14,7 +30,7 @@ const Promises = {
 };
 
 const Settings = {
-  debug: true,
+  debug: false,
   api: {
     language: "en",
     key: "c0899f4d6321bdbd97b6173b1b1341d5",
@@ -26,7 +42,7 @@ const Settings = {
 // AGE
 ////////
 
-// TODO: Fix bug when enter not integer.
+// TODO: Rewrite to use modal.
 if (localStorage.getItem("ageVerified")) {
   document.body.classList.remove("d-none");
 } else {
@@ -61,26 +77,24 @@ document.querySelector(".privacy-accept").addEventListener("click", () => {
 /////////////////////////////
 
 let button = document.createElement("span");
-button.innerHTML = '<i class="fas fa-chevron-circle-up"></i>';
+button.innerHTML = '<i class="fas fa-arrow-up"></i>';
 button.classList.add("scroll-up");
 document.body.appendChild(button);
 
 const scroll = document.querySelector(".scroll-up");
 const navbar = document.querySelector(".navbar");
 window.onscroll = () => {
-
   if (document.body.scrollTop >= 20 || document.documentElement.scrollTop > 20) {
     scroll.style.opacity = 1;
   } else {
     scroll.style.opacity = 0;
   }
 
-  if (document.body.scrollTop >= 220 || document.documentElement.scrollTop > 220) {
-    navbar.style.opacity = 0;
+  if (document.body.scrollTop >= 200 || document.documentElement.scrollTop > 200) {
+    $(navbar).fadeOut("fast");
   } else {
-    navbar.style.opacity = 1;
+    $(navbar).fadeIn("fast");
   }
-
 };
 
 scroll.addEventListener("click", event => {
@@ -118,7 +132,7 @@ Promises.movie.genre = TheMovieDB.request("genre/movie/list").then($response => 
     Genres.movie[$genre.id] = $genre.name;
   });
 
-  footerReviewMovie('#footer-review-movie-target', '#footer-review-movie-template');
+  footerReviewMovie("#footer-review-movie-target", "#footer-review-movie-template");
 });
 
 Promises.serie.genre = TheMovieDB.request("genre/tv/list").then($response => {
@@ -135,30 +149,51 @@ Promises.serie.genre = TheMovieDB.request("genre/tv/list").then($response => {
 Promises.movie.now = TheMovieDB.request("movie/now_playing").then($response => {
   if (Settings.debug) console.log("Movie:Now", $response.results);
   Promise.all([Promises.movie.genre]).then(() => {
-    listMovies("movie", $response.results, "#movie-now-target", "#movie-now-template", 0, 5);
+    $response.results.forEach($movie => {
+      Movies.now.push($movie);
+    });
+
+    listMovies("movie", $response.results, "#movie-now-target", "#movie-now-template", null, 0, 5);
   });
 });
 
 Promises.movie.discover = TheMovieDB.request("discover/movie").then($response => {
   if (Settings.debug) console.log("Movie:Discover", $response.results);
-  Promise.all([Promises.movie.genre]).then(($resources) => {
-    listMovies("movie", $response.results, "#movie-featured-target", "#movie-featured-template", 0, 18);
+  Promise.all([Promises.movie.genre]).then(() => {
+    $response.results.forEach($movie => {
+      Movies.discover.push($movie);
+    });
+
+    listMovies("movie", $response.results, "#movie-featured-target", "#movie-featured-template", "#movie-featured-extra-content", 0, 18);
   });
 });
 
 Promises.movie.popular = TheMovieDB.request("movie/popular").then($response => {
   if (Settings.debug) console.log("Movie:Popular", $response.results);
-  createCarousel($response.results, "#carousel-template", "#carousel-target", 3);
+  $response.results.forEach($movie => {
+    Movies.popular.push($movie);
+  });
+
+  createCarousel($response.results, "#carousel-target", "#carousel-template", 3);
 });
 
 Promises.movie.popular = TheMovieDB.request("movie/upcoming").then($response => {
   if (Settings.debug) console.log("Movie:Upcoming", $response.results);
-  footerLatestMovie($response.results, '#footer-latest-movie-target', '#footer-latest-movie-template', 4);
+  $response.results.forEach($movie => {
+    Movies.upComing.push($movie);
+  });
+
+  footerLatestMovie($response.results, "#footer-latest-movie-target", "#footer-latest-movie-template", 4);
+  manageShop($response.results, "#shop-movies-target", "#shop-movies-template", 8, 16);
 });
 
 Promises.movie.popular = TheMovieDB.request("movie/top_rated").then($response => {
   if (Settings.debug) console.log("Movie:Top", $response.results);
-  footerTopRatedMovie($response.results, '#footer-top-rated-target', '#footer-top-rated-template', 6);
+  $response.results.forEach($movie => {
+    Movies.topRated.push($movie);
+  });
+
+  footerTopRatedMovie($response.results, "#footer-top-rated-target", "#footer-top-rated-template", 6);
 });
 
 ///////////////////
@@ -167,14 +202,18 @@ Promises.movie.popular = TheMovieDB.request("movie/top_rated").then($response =>
 
 Promises.serie.discover = TheMovieDB.request("discover/tv").then($response => {
   if (Settings.debug) console.log("Serie:Discover", $response.results);
-  listMovies("serie", $response.results, "#serie-featured-target", "#serie-featured-template", 0, 18);
+  $response.results.forEach($serie => {
+    Series.discover.push($serie);
+  });
+
+  listMovies("serie", $response.results, "#serie-featured-target", "#serie-featured-template", "#serie-featured-extra-content", 0, 18);
 });
 
 ////////////////
 // APPLICATION
 ///////////////
 
-const createCarousel = ($resources, $template, $target, $amount = 10) => {
+const createCarousel = ($resources, $target, $template, $amount = 10) => {
   let target = document.querySelector($target);
   let template = document.querySelector($template);
   $resources.slice(0, $amount).forEach($resource => {
@@ -206,12 +245,81 @@ const createCarousel = ($resources, $template, $target, $amount = 10) => {
   });
 };
 
-const listMovies = ($type, $resources, $target, $template, $index = 0, $amount = 20) => {
+const manageShop = ($resources, $target, $template, $index = 0, $amount = 8, $cleanup = false) => {
   let target = document.querySelector($target);
   let template = document.querySelector($template);
 
+  if ($cleanup) target.innerHTML = "";
+  attachPreview($resources[$index].id);
   $resources.slice($index, $amount).forEach($resource => {
     let main = template.cloneNode(true).content,
+      div = main.querySelector("#shop-item"),
+      title = main.querySelector("#title"),
+      image = main.querySelector("img"),
+      year = main.querySelector("#year"),
+      price = main.querySelector("#price");
+
+    div.setAttribute("data-movie", $resource.id);
+    title.innerHTML = $resource.title;
+    image.setAttribute("src", TheMovieDB.image($resource.poster_path, "w300"));
+    image.setAttribute("alt", $resource.title);
+    year.innerHTML = $resource.release_date.substr(0, 4);
+    price.innerHTML = `${Math.floor(Math.random() * 29) + 15}$`;
+
+    div.addEventListener("click", event => attachPreview($resource.id, event));
+
+    target.appendChild(main);
+  });
+
+  template.remove();
+};
+
+const attachPreview = ($id, $event) => {
+  const preview = document.getElementById("shop-preview"),
+    title = preview.querySelector("#title"),
+    overview = preview.querySelector("#overview"),
+    trailer = preview.querySelector("iframe#trailer");
+
+  if (currentPreview != $id) {
+    TheMovieDB.request("movie/:id", {
+      id: $id,
+      params: {
+        append_to_response: ["videos", "casts"]
+      }
+    }).then($response => {
+      if (Settings.debug) console.log("Movie:Detail", $response);
+
+      let videos = $response.videos.results.filter(video => (video.site === "YouTube" && video.type === "Trailer" ? video : null));
+      if (videos.length >= 1) {
+        trailer.classList.remove("d-none");
+        trailer.classList.add("d-block");
+        trailer.setAttribute("src", `https://www.youtube-nocookie.com/embed/${videos[0].key}?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&color=white&controls=0&disablekb=1`);
+      } else {
+        trailer.classList.remove("d-block");
+        trailer.classList.add("d-none");
+      }
+
+      // Here, we inject the content in preview.
+      if (title) title.innerHTML = $response.title;
+      if (overview) overview.innerHTML = $response.overview;
+
+      // Set current preview has $id
+      currentPreview = $id;
+    });
+  }
+};
+
+const listMovies = ($type, $resources, $target, $template, $extra, $index = 0, $amount = 20) => {
+  let target = document.querySelector($target);
+  let template = document.querySelector($template);
+  let extra = target.querySelector($extra);
+  let displayed = 0;
+  $(extra).hide();
+
+  $resources.slice($index, $amount).forEach($resource => {
+    displayed++;
+
+    const main = template.cloneNode(true).content,
       item = main.querySelector("div#item"),
       title = main.querySelector("#title"),
       image = main.querySelector("img"),
@@ -230,13 +338,27 @@ const listMovies = ($type, $resources, $target, $template, $index = 0, $amount =
     item.setAttribute("data-target", "#detail-modal");
     item.addEventListener("click", () => attachModal($resource.id, $type));
 
-    target.appendChild(main);
+    if (displayed > 12) {
+      extra.appendChild(main);
+      target.appendChild(extra);
+    } else {
+      target.appendChild(main);
+    }
   });
 
   template.remove();
 };
 
 const attachModal = ($id, $type) => {
+  let modal = document.getElementById("detail-modal"),
+    title = modal.querySelector(".modal-title"),
+    overview = modal.querySelector(".modal-body #overview"),
+    trailer = modal.querySelector("iframe#trailer"),
+    release = modal.querySelector("#release"),
+    casts = modal.querySelector("#casts"),
+    crews = modal.querySelector("#crews"),
+    genres = modal.querySelector("#genres");
+
   TheMovieDB.request($type === "movie" ? "movie/:id" : "tv/:id", {
     id: $id,
     params: {
@@ -244,14 +366,6 @@ const attachModal = ($id, $type) => {
     }
   }).then($response => {
     if (Settings.debug) console.log($type === "movie" ? "Movie:Detail" : "Serie:Detail", $response);
-    let modal = document.getElementById("detail-modal"),
-      title = modal.querySelector(".modal-title"),
-      overview = modal.querySelector(".modal-body #overview"),
-      trailer = modal.querySelector("iframe#trailer"),
-      release = modal.querySelector("#release"),
-      casts = modal.querySelector("#casts"),
-      crews = modal.querySelector("#crews"),
-      genres = modal.querySelector("#genres");
 
     if (title) title.innerHTML = $type === "movie" ? $response.title : $response.name;
     if (overview) overview.innerHTML = $response.overview;
@@ -306,7 +420,7 @@ const footerLatestMovie = ($resources, $target, $template, $amount = 4) => {
   let target = document.querySelector($target);
   let template = document.querySelector($template);
   $resources.slice(0, $amount).forEach($resource => {
-    let main = template.cloneNode(true).content,
+    const main = template.cloneNode(true).content,
       image = main.querySelector("img"),
       title = main.querySelector("#title");
 
@@ -314,51 +428,49 @@ const footerLatestMovie = ($resources, $target, $template, $amount = 4) => {
     image.setAttribute("src", TheMovieDB.image($resource.poster_path, "w300"));
 
     target.appendChild(main);
-  })
+  });
 };
 
 const footerReviewMovie = ($target, $template) => {
   let target = document.querySelector($target);
   let template = document.querySelector($template);
   Genres.movie.forEach($genre => {
-    let main = template.cloneNode(true).content,
-      link = main.querySelector('a#link');
+    const main = template.cloneNode(true).content,
+      link = main.querySelector("a#link");
 
     link.appendChild(document.createTextNode($genre));
-    link.setAttribute('href', `#${$genre}`);
+    link.setAttribute("href", `#${$genre}`);
 
     target.appendChild(main);
-  })
+  });
 };
 
 const footerTopRatedMovie = ($resources, $target, $template, $amount = 6) => {
   let target = document.querySelector($target);
   let template = document.querySelector($template);
   $resources.slice(0, $amount).forEach($resource => {
-    let main = template.cloneNode(true).content,
-      image = main.querySelector('img');
+    const main = template.cloneNode(true).content,
+      image = main.querySelector("img");
 
     image.setAttribute("src", TheMovieDB.image($resource.poster_path, "w500"));
-    image.setAttribute('alt', $resource.title);
+    image.setAttribute("alt", $resource.title);
 
     target.appendChild(image);
-  })
+  });
 };
 
-let lastPushedSerieFilter = null;
-let lastPushedMovieFilter = null;
 const filterByGenre = ($genre, $btn, $selector, $type) => {
   if ($type === "movie") {
-    if (lastPushedMovieFilter !== null) {
+    if (lastPushedMovieFilter !== undefined) {
       lastPushedMovieFilter.classList.remove("btn-primary");
       lastPushedMovieFilter.classList.add("btn-light");
-      lastPushedMovieFilter = null;
+      lastPushedMovieFilter = undefined;
     }
   } else {
-    if (lastPushedSerieFilter !== null) {
+    if (lastPushedSerieFilter !== undefined) {
       lastPushedSerieFilter.classList.remove("btn-primary");
       lastPushedSerieFilter.classList.add("btn-light");
-      lastPushedSerieFilter = null;
+      lastPushedSerieFilter = undefined;
     }
   }
 
@@ -373,9 +485,24 @@ const filterByGenre = ($genre, $btn, $selector, $type) => {
   });
 };
 
+const showMoreOrLess = ($btn, $selector) => {
+  let button = document.querySelector($btn);
+  let content = document.querySelector($selector);
+  $(content).slideToggle("fast", "linear");
+
+  if (button.innerHTML == "Show less") {
+    button.innerHTML = "Show more";
+  } else {
+    button.innerHTML = "Show less";
+  }
+};
+
 ///////////////////
 // EVENTS HANDLER
 //////////////////
 
 Array.from(document.querySelectorAll("#movie-featured-filter-target button")).forEach($btn => $btn.addEventListener("click", () => (filterByGenre($btn.getAttribute("data-genre"), $btn, ".movie", "movie"), false)));
 Array.from(document.querySelectorAll("#serie-featured-filter-target button")).forEach($btn => $btn.addEventListener("click", () => (filterByGenre($btn.getAttribute("data-genre"), $btn, ".serie", "serie"), false)));
+
+document.getElementById("movie-featured-extra").addEventListener("click", () => showMoreOrLess("#movie-featured-extra", "#movie-featured-extra-content"));
+document.getElementById("serie-featured-extra").addEventListener("click", () => showMoreOrLess("#serie-featured-extra", "#serie-featured-extra-content"));
