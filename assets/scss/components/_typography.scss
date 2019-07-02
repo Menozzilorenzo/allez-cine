@@ -1,0 +1,20 @@
+// Generate .text-* from colors map..
+@each $name, $color in $colors {
+    .text-#{$name} {
+        color: $color;
+    }
+}
+
+// Generate .text-gray-* from grays map..
+@each $name, $color in $grays {
+    .text-gray-#{$name} {
+        color: $color;
+    }
+}
+
+// Generate .border-* from spacers map..
+@each $name, $size in $spacers {
+    .border-#{$name} {
+        border-width: $size !important;
+    }
+}
