@@ -1,7 +1,5 @@
 // NAVBAR
 .navbar {
-  transition: opacity 0.2s ease-in-out;
-  opacity: 1;
   & .navbar-nav {
     & .nav-item {
       &.active {
