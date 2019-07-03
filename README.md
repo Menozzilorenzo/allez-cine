@@ -27,7 +27,7 @@
     - [x] Must be responsive.
 
 ### HTML Content (Vincent De Gheyndt)
-
+#### Film Section
     - [x] Each movie card must have 
             - Title
             - Year of release
@@ -42,14 +42,17 @@
             - Year of release
             - Genre
             - Actors
-
-    - [x] 
-    - [x] Create a "more movies" button
-
-    - [x] pop-up
-    - [x] map
+    - [x] modal with form input values on click on the "send" button
+#### Featured Movies Section
+    - [x] Create a "more movies" button (collapse)
+#### Shop Movie
+    - [x] Create a shop
+    - [x] use arrows to slide between movie panels
+#### Contact us
+    - [x] create a form to send requests
+    - [x] Bonus : insert a map in the form
 
     - [x] Must be responsive        
 
 ### Javascript, API implementation and revision (Joshua Fouyon)
-    - [x]
+    - [x] create buttons to filter movies by genre
