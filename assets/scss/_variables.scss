@@ -7,7 +7,7 @@ $enable-transitions: true;
 $enable-prefers-reduced-motion-media-query: true;
 $enable-grid-classes: true;
 $enable-pointer-cursor-for-buttons: true;
-$enable-responsive-font-sizes: true;
+$enable-responsive-font-sizes: false;
 $enable-validation-icons: true;
 $enable-deprecation-messages: false;
 
@@ -50,12 +50,11 @@ $theme-colors: (
   twitter: #1da1f2,
   google: #dd4b39,
   dribbble: #ea4c89,
-  semi-transparent: rgba($white, 0.5)
+  semi-transparent: rgba($white, 0.4)
 );
 
 // SPACES & SIZES
 $spacer: 1rem !default;
-// Use this to add any spaces to bootstrap. ("mt-*", "pt-*", etc etc)
 $spacers: (
   6: (
     $spacer * 3.5
@@ -71,5 +70,4 @@ $spacers: (
   )
 );
 
-// Use this to add any sizes to bootstrap. ("w-*", "h-*")
 $sizes: ();

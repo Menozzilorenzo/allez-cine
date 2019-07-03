@@ -1,8 +1,33 @@
-.text-small {
-  font-size: 16px;
+// MODALS
+
+#watch-modal {
+  #trailer {
+    height: 512px;
+    @include breakpoint-down("md") {
+      height: 315px;
+    }
+
+    @include breakpoint-down("sm") {
+      height: 315;
+    }
+  }
 }
 
 // MOVIES
+#movie-now {
+  @include breakpoint-down("sm") {
+    margin-top: -8px;
+  }
+
+  & #movie-now-target {
+    & #item {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
 .movie {
   & #title {
     font-size: 16px;
@@ -48,6 +73,20 @@
 
     &:hover {
       cursor: pointer;
+    }
+  }
+}
+
+#shop-preview {
+  &.card {
+    background-color: none !important;
+    border: none;
+    & #shop-preview-nav {
+      margin-top: -40px !important;
+      margin-bottom: 5px;
+      & button {
+        margin-left: 5px;
+      }
     }
   }
 }

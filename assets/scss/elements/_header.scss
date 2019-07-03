@@ -1,13 +1,40 @@
 // NAVBAR
 .navbar {
-  & .navbar-nav {
-    & .nav-item {
-      &.active {
-        color: $primary !important;
-      }
+  & .navbar-collapse {
+    @include breakpoint-down("md") {
+      background-color: $dark;
+    }
 
-      & .nav-link {
-        color: $white;
+    & .navbar-nav {
+      & .nav-item {
+        &.active {
+          & .nav-link {
+            color: $primary !important;
+            @include breakpoint-down("md") {
+              color: $white !important;
+            }
+            &.bg-semi-transparent {
+              background-color: $primary !important;
+              color: $white !important;
+            }
+          }
+        }
+
+        & .nav-link {
+          color: $white;
+          text-transform: uppercase;
+          @include breakpoint-down("md") {
+            color: $white;
+          }
+        }
+
+        &.dropdown {
+          &.show {
+            & a.bg-semi-transparent {
+              background-color: $primary !important;
+            }
+          }
+        }
       }
     }
   }
@@ -71,6 +98,9 @@
         filter: brightness(50%);
         width: 100%;
         height: 400px;
+        @include breakpoint-down("sm") {
+          height: 350px;
+        }
         object-fit: cover;
         object-position: unset;
       }
