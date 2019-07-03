@@ -12621,6 +12621,16 @@ footer ul li a:hover {
   text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth !important;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 #watch-modal #trailer {
   height: 512px;
 }
