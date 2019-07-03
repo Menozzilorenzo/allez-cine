@@ -1,0 +1,114 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+header{
+    .head1{
+        background-color: #4c5155;
+        height: 80px;
+        p{
+            color: #ffffff;
+            .red{
+                color: #fe4240;
+            }
+        }
+    }
+    .head2{
+        background-color: #fe4240;
+        padding: 6px 0;
+    }
+}
+
+main{
+    .title{
+        font-size: 25px;
+    }
+    .texte{
+        font-size: 12px;
+    }
+}    
+.jumbotron{
+    margin-bottom: 0rem !important;
+}
+
+// debut bouton et pop-up --------------------------------------------------------------------------------------------------------------------
+
+// ---------button---------------
+.button{
+    background-color: #fe4240;
+    color: white;
+    border: 2px solid #fe4240;
+    border-radius: 5px;
+    padding: 10px;
+    &:hover{
+        background-color: white;
+        color: #fe4240;
+        text-decoration: none;
+    }
+}
+
+// ---------pop-up---------------
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.popup .close:hover {
+    color: #fe4240;
+}
+// fin bouton et pop-up ----------------------------------------------------------------------------------------------------------------------
+
+footer{
+    background-color: #0d0d0d;
+    height: 146px;
+    section{
+        padding: 10px 0 10px 0;
+        border-bottom: 1px solid gray;
+        p{
+            color: #ffffff;
+            padding: 15px 0 0 0;
+        }
+        div{
+            display: block;
+            justify-content: center;
+            a{
+                display: inline-block;
+                color: #ffffff;
+                border: 1px solid white;
+                padding: 6px 12px;
+                justify-content: space-around;
+            }
+        }
+    }
+    
+}
