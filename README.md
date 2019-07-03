@@ -12,20 +12,19 @@
 * [**Vincent De Gheyndt**](https://github.com/vincentdegheyndt)
 
 ## Objectives & process
-
 ### Newsletter (Lorenzo Menozzi)
     - [x] HTML 5 exclusively.
     - [x] Use tables.
     - [x] Must be responsive.
 
+    - [X] Bonus : create an "unsubscribe from the newsletter" webpage.
 ### Header and Footer (Fabien Desablens)
     - [x] Bootstrap Hamburger Menu.
-    - [x] Jumbotron for the header. Use CSS, Jquery or JS for the slides.
+    - [x] Jumbotron for the header. Use CSS or JS for the slides.
     - [x] Animated link buttons to social networks.
 
     - [x] Create an arrow-shaped button at the bottom of the page that moves the visitor's display back to the header. JS only (with CSS stylizing).
     - [x] Must be responsive.
-
 ### HTML Content (Vincent De Gheyndt)
 #### Film Section
     - [x] Each movie card must have 
@@ -56,3 +55,23 @@
 
 ### Javascript, API implementation and revision (Joshua Fouyon)
     - [x] create buttons to filter movies by genre
+    - [x] BONUS : use an API to fetch all data (genres, release year, director,...)
+    - [x] Prevent people under 18 from entering the website
+    - [x] create a GDPR Compliant form regarding the use of Cookies
+    - [x] Create a Log In form containing :
+                - Username
+                - Password
+                - OK button
+                - [CREATE ACCOUNT] button
+                - [STAY CONNECTED] button
+                - [FORGOT YOUR PASSWORD] link
+                - [CANCEL] link
+    - [x] Create a Register form containing :
+                - Name
+                - E-mail
+                - Password
+                - Confirm password
+                - General conditions [SELECT] button
+                - [REGISTER] button
+
+        COMMENT : a minor bug between the "genre filters" and the "more movies" button displays the extra movies under the original line of movies even when there is still some room on that line.
