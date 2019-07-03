@@ -329,7 +329,7 @@ const listMovies = ($type, $resources, $target, $template, $extra, $index = 0, $
     displayed++;
 
     const main = template.cloneNode(true).content,
-      item = main.querySelector("div#item"),
+      item = main.querySelector("#item"),
       title = main.querySelector("#title"),
       image = main.querySelector("img"),
       year = main.querySelector("#year"),

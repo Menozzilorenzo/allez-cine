@@ -52,17 +52,17 @@
 
     <!-- ========= HEADER ========= -->
     <header>
-      <div class="jumbotron jumbotron-fluid p-0 m-0">
+      <section class="jumbotron jumbotron-fluid p-0 m-0">
         <!--Navbar-->
         <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-          <div class="container-fluid">
+          <section class="container-fluid">
             <a class="navbar-brand font-weight-bolder text-uppercase" href="index.html"> <span class="text-primary">ALLEZ</span>CINE! </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <section class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto d-flex justify-content-center">
                 <li class="nav-item mr-2 active">
                   <a class="nav-link" href="index.html">Home</a>
@@ -102,12 +102,12 @@
                   <span class="input-group-addon"><i class="fa fa-search"></i></span>
                 </div>
               </form>
-            </div>
-          </div>
+            </section>
+          </section>
         </nav>
 
         <!-- CAROUSEL -->
-        <div id="carousel-popular" class="carousel slide" data-ride="carousel">
+        <section id="carousel-popular" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carousel-popular" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-popular" data-slide-to="1"></li>
@@ -115,49 +115,49 @@
             <li data-target="#carousel-popular" data-slide-to="3"></li>
           </ol>
 
-          <div id="carousel-target" class="carousel-inner">
+          <section id="carousel-target" class="carousel-inner">
             <template id="carousel-template">
-              <div class="carousel-item">
+              <article class="carousel-item">
                 <img class="img-fluid" />
                 <div class="carousel-caption">
                   <h3 id="title">Second slide label</h3>
                   <p id="overview" class="d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   <a id="link" class="btn btn-primary text-uppercase mb-5" href="">WATCH TRAILER</a>
                 </div>
-              </div>
+              </article>
             </template>
-            <div class="carousel-item active">
+            <article class="carousel-item active">
               <img class="img-fluid" src="./assets/images/slides/first.jpg" alt="" />
               <div class="carousel-caption ">
                 <h1>LATEST <span class="text-primary">ON</span>LINE <span class="text-primary">MO</span>VIES</h1>
                 <a class="btn btn-primary text-uppercase mb-5" href="#movie-featured">DISCOVER MOVIE</a>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            </article>
+          </section>
+        </section>
+      </section>
 
-      <div class="bg-primary p-1 text-white">
+      <section class="bg-primary p-1 text-white">
         <div class="mx-5">
           <span class="mr-5"><i class="fas fa-phone-alt"></i>&nbsp;(+000) 009 455 4088</span>
           <a href="" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#login-modal">LOGIN</a>
           <a href="" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#register-modal">REGISTER</a>
         </div>
-      </div>
+      </section>
     </header>
 
     <!-- ========= MAIN ========= -->
     <main class="py-2">
-      <div class="container-fluid">
+      <section class="container-fluid">
         <!-- MOVIES:NOW -->
-        <div id="movie-now">
-          <div class="row justify-content-center">
+        <section id="movie-now">
+          <section class="row justify-content-center">
             <div class="col-12 col-md-9">
-              <div class="row">
+              <section class="row">
                 <div class="card p-2">
                   <div class="card-body">
                     <template id="movie-now-template">
-                      <div id="item" class="col">
+                      <article id="item" class="col">
                         <div class="text-center">
                           <img class="img-fluid" src="" alt="" />
                           <h6 id="title" class="text-small mt-2 text-muted d-none d-md-block"></h6>
@@ -166,27 +166,27 @@
                             <span id="genre" class="float-right"></span>
                           </div>
                         </div>
-                      </div>
+                      </article>
                     </template>
-                    <div class="row" id="movie-now-target"></div>
+                    <section class="row" id="movie-now-target"></section>
                   </div>
                 </div>
-              </div>
+              </section>
             </div>
-          </div>
-        </div>
+          </section>
+        </section>
 
         <!-- MOVIES:FEATURED -->
-        <div id="movie-featured">
-          <div class="row mt-5 justify-content-center">
+        <section id="movie-featured">
+          <section class="row mt-5 justify-content-center">
             <div class="col-11">
               <h2 class="p-3 text-gray-700 font-weight-bold border-left border-primary border-1">FEATURED MOVIES</h2>
             </div>
-          </div>
+          </section>
 
-          <div class="row justify-content-center">
+          <section class="row justify-content-center">
             <div class="p-3 col-9">
-              <div class="btn-toolbar" role="toolbar" id="movie-featured-filter-target">
+              <section class="btn-toolbar" role="toolbar" id="movie-featured-filter-target">
                 <button type="button" class="btn btn-light mr-1 mb-1" data-genre="0">All</button>
                 <button type="button" class="btn btn-light mr-1 mb-1" data-genre="28">Action</button>
                 <button type="button" class="btn btn-light mr-1 mb-1" data-genre="12">Adventure</button>
@@ -195,91 +195,91 @@
                 <button type="button" class="btn btn-light mr-1 mb-1" data-genre="16">Animation</button>
                 <button type="button" class="btn btn-light mr-1 mb-1" data-genre="53">Thriller</button>
                 <button type="button" class="btn btn-light mr-1 mb-1" data-genre="80">Crime</button>
-              </div>
+              </section>
             </div>
-          </div>
+          </section>
 
-          <div class="row justify-content-center">
+          <section class="row justify-content-center">
             <div class="col-9">
               <template id="movie-featured-template">
-                <div id="item" class="col-6 col-md-4 col-lg-2 mb-4 text-center movie">
+                <article id="item" class="col-6 col-md-4 col-lg-2 mb-4 text-center movie">
                   <img class="img-fluid" />
                   <h5 id="title" class="text-small"></h5>
                   <div class="d-none d-md-none d-lg-block ">
                     <span id="year" class="float-left"></span>
                     <span id="genre" class="float-right"></span>
                   </div>
-                </div>
+                </article>
               </template>
-              <div class="row d-flex" id="movie-featured-target">
-                <div id="movie-featured-extra-content" class="row"></div>
-              </div>
+              <section class="row d-flex" id="movie-featured-target">
+                <section id="movie-featured-extra-content" class="row"></section>
+              </section>
             </div>
-          </div>
+          </section>
 
-          <div class="row justify-content-center">
+          <section class="row justify-content-center">
             <div class="col-8 col-md-2">
               <button id="movie-featured-extra" class="btn btn-primary btn-block">Show more</button>
             </div>
-          </div>
-        </div>
+          </section>
+        </section>
 
         <!-- SERIES:FEATURED -->
-        <div id="serie-featured">
-          <div class="row mt-5 justify-content-center">
+        <section id="serie-featured">
+          <section class="row mt-5 justify-content-center">
             <div class="col-11">
               <h2 class="p-3 text-gray-700 font-weight-bold border-left border-primary border-1">FEATURED SERIES</h2>
             </div>
-          </div>
+          </section>
 
-          <div class="row justify-content-center">
+          <section class="row justify-content-center">
             <div class="p-3 col-9">
-              <div class="btn-group" role="toolbar" id="serie-featured-filter-target">
+              <section class="btn-group" role="toolbar" id="serie-featured-filter-target">
                 <button type="button" class="btn btn-light mr-1 mb-1" data-genre="0">All</button>
                 <button type="button" class="btn btn-light mr-1 mb-1" data-genre="16">Animation</button>
                 <button type="button" class="btn btn-light mr-1 mb-1" data-genre="18">Drama</button>
                 <button type="button" class="btn btn-light mr-1 mb-1" data-genre="80">Crime</button>
-              </div>
+              </section>
             </div>
-          </div>
+          </section>
 
-          <div class="row justify-content-center">
+          <section class="row justify-content-center">
             <div class="col-9">
               <template id="serie-featured-template">
-                <div id="item" class="col-6 col-md-4 col-lg-2 mb-4 text-center serie">
+                <article id="item" class="col-6 col-md-4 col-lg-2 mb-4 text-center serie">
                   <img class="img-fluid mx-auto d-block" />
                   <h5 id="title" class="text-small"></h5>
                   <div class="p-2 d-none d-md-none d-lg-block text-center">
                     <span id="year" class="float-left"></span>
                     <span id="genre" class="float-right"></span>
                   </div>
-                </div>
+                </article>
               </template>
-              <div class="row" id="serie-featured-target">
-                <div id="serie-featured-extra-content" class="row"></div>
-              </div>
+              <section class="row" id="serie-featured-target">
+                <section id="serie-featured-extra-content" class="row"></section>
+              </section>
             </div>
-          </div>
+          </section>
 
-          <div class="row justify-content-center">
+          <section class="row justify-content-center">
             <div class="col-8 col-md-2">
               <button id="serie-featured-extra" class="btn btn-primary btn-block">Show more</button>
             </div>
-          </div>
-        </div>
+          </section>
+        </section>
 
         <!-- SHOP:MOVIES -->
-        <div id="shop-movies">
-          <div class="row mt-5 mb-5 justify-content-center">
+        <section id="shop-movies">
+          <section class="row mt-5 mb-5 justify-content-center">
             <div class="col-11">
               <h2 class="p-3 text-gray-700 font-weight-bold border-left border-primary border-1">SHOP MOVIES</h2>
             </div>
-          </div>
+          </section>
 
-          <div class="row">
+          <section class="row">
             <div class="col-12 col-md-6 col-lg-7">
               <template id="shop-movies-template">
-                <div class="col-6 col-md-6 col-lg-3 d-flex">
+                <article class="col-6 col-md-6 col-lg-3 d-flex">
                   <div id="shop-item" class="card mb-2">
                     <img class="card-img-top" src="" alt="" />
                     <div class="card-body text-center" style="max-height: 5rem;">
@@ -290,66 +290,64 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </article>
               </template>
-              <div class="row shop" id="shop-movies-target"></div>
+              <section class="row shop" id="shop-movies-target"></section>
             </div>
 
             <div class="col-12 col-md-6 col-lg-5 d-flex order-first order-md-last">
               <div id="shop-preview" class="card mb-2">
-                <div id="shop-preview-nav">
+                <section id="shop-preview-nav">
                   <button id="shop-right" class="btn btn-small btn-dark float-right"><i class="fas fa-chevron-right"></i></button>
                   <button id="shop-left" class="btn btn-small btn-dark float-right" disabled><i class="fas fa-chevron-left"></i></button>
-                </div>
+                </section>
 
                 <iframe class="embed-responsive d-none" id="preview-trailer" src="" height="415" frameborder="0"></iframe>
                 <img class="img-fluid d-none" src="" alt="" />
 
                 <div class="card-body bg-dark text-white">
-                  <div class="row">
+                  <section class="row">
                     <div class="col-12 mb-4">
                       <h2 id="title" class="text-primary"></h2>
                     </div>
-                  </div>
+                  </section>
 
-                  <div class="row font-weight-bold mb-4">
+                  <section class="row font-weight-bold mb-4">
                     <div class="col-2 text-primary align-self-center">Story line</div>
                     <div class="col-1 text-primary align-self-center">:</div>
                     <div class="col-9 align-self-center">
                       <span class="text-justify font-weight-normal" id="overview"></span>
                     </div>
-                  </div>
+                  </section>
 
-                  <div class="row font-weight-bold">
-                      <div class="col-2 text-primary align-self-center">Release on</div>
-                      <div class="col-1 text-primary align-self-center">:</div>
-                      <div class="col-9 align-self-center">
-                        <span class="text-justify font-weight-normal" id="release"></span>
-                      </div>
-                  </div>
+                  <section class="row font-weight-bold">
+                    <div class="col-2 text-primary align-self-center">Release on</div>
+                    <div class="col-1 text-primary align-self-center">:</div>
+                    <div class="col-9 align-self-center">
+                      <span class="text-justify font-weight-normal" id="release"></span>
+                    </div>
+                  </section>
 
-                  <div class="row font-weight-bold">
-                      <div class="col-2 text-primary align-self-center">Genres</div>
-                      <div class="col-1 text-primary align-self-center">:</div>
-                      <div class="col-9 align-self-center">
-                        <span class="text-justify font-weight-normal" id="genres">00</span>
-                      </div>
-                  </div>
+                  <section class="row font-weight-bold">
+                    <div class="col-2 text-primary align-self-center">Genres</div>
+                    <div class="col-1 text-primary align-self-center">:</div>
+                    <div class="col-9 align-self-center">
+                      <span class="text-justify font-weight-normal" id="genres">00</span>
+                    </div>
+                  </section>
 
-                  <div class="row font-weight-bold">
-                      <div class="col-2 text-primary align-self-center">Price</div>
-                      <div class="col-1 text-primary align-self-center">:</div>
-                      <div class="col-9 align-self-center">
-                        <span class="text-justify font-weight-normal" id="price"></span>
-                      </div>
-                  </div>
-
-
+                  <section class="row font-weight-bold">
+                    <div class="col-2 text-primary align-self-center">Price</div>
+                    <div class="col-1 text-primary align-self-center">:</div>
+                    <div class="col-9 align-self-center">
+                      <span class="text-justify font-weight-normal" id="price"></span>
+                    </div>
+                  </section>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- CONTACT:US -->
         <div id="contact-us">
@@ -401,14 +399,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <!-- ========= FOOTER ========= -->
     <footer class="p-3">
-      <div class="container-fluid">
+      <section class="container-fluid">
         <!-- SUBSCRIBE TO USE -->
-        <div class="row justify-content-center">
+        <section class="row justify-content-center">
           <div class="col-12 col-md-8 col-lg-6 col-xl-4 mt-6 text-center">
             <h2 class="text-primary">SUBSCRIBE TO US</h2>
             <form>
@@ -420,10 +418,10 @@
               </div>
             </form>
           </div>
-        </div>
-        <div class="row">
+        </section>
+        <section class="row">
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="row">
+            <section class="row">
               <!-- RELEASES -->
               <div class="col-6">
                 <h4 class="text-white text-uppercase mt-5 mb-4">
@@ -454,11 +452,11 @@
                   <li><a href="" class="text-gray-500">Sci-fi</a></li>
                 </ul>
               </div>
-            </div>
+            </section>
           </div>
 
           <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
-            <div class="row">
+            <section class="row">
               <!-- REVIEW MOVIES -->
               <div class="col-6">
                 <h4 class="text-white text-uppercase mt-5 mb-4">
@@ -473,20 +471,18 @@
               </div>
               <!-- LATEST MOVIES -->
               <div class="col-6">
-                <h4 class="text-white text-uppercase mt-5 mb-4">
-                  LATEST MOVIES
-                </h4>
+                <h4 class="text-white text-uppercase mt-5 mb-4">LATEST MOVIES</h4>
                 <hr />
                 <div id="footer-latest-movie-target">
                   <template id="footer-latest-movie-template">
-                    <div class="d-flex mb-2">
+                    <article class="d-flex mb-2">
                       <img src="" alt="" width="50" style="object-fit: contain" />
                       <span id="title" class="text-white ml-3"></span>
-                    </div>
+                    </article>
                   </template>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
 
           <div class="col-12 col-lg-2">
@@ -498,10 +494,10 @@
               </template>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- CONNECT US -->
-        <div class="row justify-content-center">
+        <section class="row justify-content-center">
           <div class="col-12 connect-us">
             <hr class="mb-5" />
             <hr class="" />
@@ -514,21 +510,21 @@
               <a href="" target="_blank" class="btn"><i class="fab fa-google-plus-g"></i></a>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </section>
     </footer>
 
     <!-- ====== RGPD ====== -->
-    <div class="banner-privacy">
-      <div>
+    <section class="banner-privacy">
+      <article>
         <p>
           We use cookies to <b>provide</b> and <b>improve</b> our services. By using our site, you <b>accept</b>
           cookies.
           <a class="privacy-accept" href="#">Accept</a>
           <a rel="nofollow" class="privacy-learn" target="_blank" href="https://www.cookiesandyou.com/">Learn more</a>
         </p>
-      </div>
-    </div>
+      </article>
+    </section>
 
     <!-- ========= MODALS ========= -->
     <!-- CONTACT:US -->
@@ -675,6 +671,6 @@
     <script src="https://unpkg.com/bootstrap"></script>
     <script src="https://kit.fontawesome.com/efb976df6a.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=fetch"></script>
-    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/app.js" defer></script>
   </body>
 </html>
