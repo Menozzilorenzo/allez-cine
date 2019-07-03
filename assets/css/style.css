@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900&display=swap");
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -30,7 +32,7 @@
   --twitter: #1da1f2;
   --google: #dd4b39;
   --dribbble: #ea4c89;
-  --semi-transparent: rgba(255, 255, 255, 0.5);
+  --semi-transparent: rgba(255, 255, 255, 0.4);
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -326,12 +328,6 @@ legend {
   white-space: normal;
 }
 
-@media (max-width: 1200px) {
-  legend {
-    font-size: calc(1.275rem + 0.3vw) ;
-  }
-}
-
 progress {
   vertical-align: baseline;
 }
@@ -383,40 +379,16 @@ h1, .h1 {
   font-size: 2.5rem;
 }
 
-@media (max-width: 1200px) {
-  h1, .h1 {
-    font-size: calc(1.375rem + 1.5vw) ;
-  }
-}
-
 h2, .h2 {
   font-size: 2rem;
-}
-
-@media (max-width: 1200px) {
-  h2, .h2 {
-    font-size: calc(1.325rem + 0.9vw) ;
-  }
 }
 
 h3, .h3 {
   font-size: 1.75rem;
 }
 
-@media (max-width: 1200px) {
-  h3, .h3 {
-    font-size: calc(1.3rem + 0.6vw) ;
-  }
-}
-
 h4, .h4 {
   font-size: 1.5rem;
-}
-
-@media (max-width: 1200px) {
-  h4, .h4 {
-    font-size: calc(1.275rem + 0.3vw) ;
-  }
 }
 
 h5, .h5 {
@@ -438,22 +410,10 @@ h6, .h6 {
   line-height: 1.2;
 }
 
-@media (max-width: 1200px) {
-  .display-1 {
-    font-size: calc(1.725rem + 5.7vw) ;
-  }
-}
-
 .display-2 {
   font-size: 5.5rem;
   font-weight: 300;
   line-height: 1.2;
-}
-
-@media (max-width: 1200px) {
-  .display-2 {
-    font-size: calc(1.675rem + 5.1vw) ;
-  }
 }
 
 .display-3 {
@@ -462,22 +422,10 @@ h6, .h6 {
   line-height: 1.2;
 }
 
-@media (max-width: 1200px) {
-  .display-3 {
-    font-size: calc(1.575rem + 3.9vw) ;
-  }
-}
-
 .display-4 {
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
-}
-
-@media (max-width: 1200px) {
-  .display-4 {
-    font-size: calc(1.475rem + 2.7vw) ;
-  }
 }
 
 hr {
@@ -2040,23 +1988,23 @@ pre code {
 .table-semi-transparent,
 .table-semi-transparent > th,
 .table-semi-transparent > td {
-  background-color: rgba(255, 255, 255, 0.86);
+  background-color: rgba(255, 255, 255, 0.832);
 }
 
 .table-semi-transparent th,
 .table-semi-transparent td,
 .table-semi-transparent thead th,
 .table-semi-transparent tbody + tbody {
-  border-color: rgba(255, 255, 255, 0.74);
+  border-color: rgba(255, 255, 255, 0.688);
 }
 
 .table-hover .table-semi-transparent:hover {
-  background-color: rgba(242, 242, 242, 0.86);
+  background-color: rgba(242, 242, 242, 0.832);
 }
 
 .table-hover .table-semi-transparent:hover > td,
 .table-hover .table-semi-transparent:hover > th {
-  background-color: rgba(242, 242, 242, 0.86);
+  background-color: rgba(242, 242, 242, 0.832);
 }
 
 .table-active,
@@ -3201,38 +3149,38 @@ fieldset:disabled a.btn {
 
 .btn-semi-transparent {
   color: #212529;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn-semi-transparent:hover {
   color: #212529;
-  background-color: rgba(236, 236, 236, 0.5);
-  border-color: rgba(230, 230, 230, 0.5);
+  background-color: rgba(236, 236, 236, 0.4);
+  border-color: rgba(230, 230, 230, 0.4);
 }
 
 .btn-semi-transparent:focus, .btn-semi-transparent.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(178, 180, 181, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(178, 180, 181, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(163, 165, 166, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(163, 165, 166, 0.5);
 }
 
 .btn-semi-transparent.disabled, .btn-semi-transparent:disabled {
   color: #212529;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn-semi-transparent:not(:disabled):not(.disabled):active, .btn-semi-transparent:not(:disabled):not(.disabled).active,
 .show > .btn-semi-transparent.dropdown-toggle {
   color: #212529;
-  background-color: rgba(230, 230, 230, 0.5);
-  border-color: rgba(223, 223, 223, 0.5);
+  background-color: rgba(230, 230, 230, 0.4);
+  border-color: rgba(223, 223, 223, 0.4);
 }
 
 .btn-semi-transparent:not(:disabled):not(.disabled):active:focus, .btn-semi-transparent:not(:disabled):not(.disabled).active:focus,
 .show > .btn-semi-transparent.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(178, 180, 181, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(178, 180, 181, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(163, 165, 166, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(163, 165, 166, 0.5);
 }
 
 .btn-outline-primary {
@@ -3644,14 +3592,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-semi-transparent {
-  color: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn-outline-semi-transparent:hover {
   color: #212529;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn-outline-semi-transparent:focus, .btn-outline-semi-transparent.focus {
@@ -3660,15 +3608,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-semi-transparent.disabled, .btn-outline-semi-transparent:disabled {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
   background-color: transparent;
 }
 
 .btn-outline-semi-transparent:not(:disabled):not(.disabled):active, .btn-outline-semi-transparent:not(:disabled):not(.disabled).active,
 .show > .btn-outline-semi-transparent.dropdown-toggle {
   color: #212529;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn-outline-semi-transparent:not(:disabled):not(.disabled):active:focus, .btn-outline-semi-transparent:not(:disabled):not(.disabled).active:focus,
@@ -5832,12 +5780,12 @@ a.badge-dribbble:focus, a.badge-dribbble.focus {
 
 .badge-semi-transparent {
   color: #212529;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 a.badge-semi-transparent:hover, a.badge-semi-transparent:focus {
   color: #212529;
-  background-color: rgba(230, 230, 230, 0.5);
+  background-color: rgba(230, 230, 230, 0.4);
 }
 
 a.badge-semi-transparent:focus, a.badge-semi-transparent.focus {
@@ -6059,17 +6007,17 @@ a.badge-semi-transparent:focus, a.badge-semi-transparent.focus {
 }
 
 .alert-semi-transparent {
-  color: rgba(68, 68, 68, 0.74);
-  background-color: rgba(255, 255, 255, 0.9);
-  border-color: rgba(255, 255, 255, 0.86);
+  color: rgba(54, 54, 54, 0.688);
+  background-color: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.832);
 }
 
 .alert-semi-transparent hr {
-  border-top-color: rgba(242, 242, 242, 0.86);
+  border-top-color: rgba(242, 242, 242, 0.832);
 }
 
 .alert-semi-transparent .alert-link {
-  color: rgba(43, 43, 43, 0.74);
+  color: rgba(29, 29, 29, 0.688);
 }
 
 @-webkit-keyframes progress-bar-stripes {
@@ -6509,19 +6457,19 @@ a.badge-semi-transparent:focus, a.badge-semi-transparent.focus {
 }
 
 .list-group-item-semi-transparent {
-  color: rgba(68, 68, 68, 0.74);
-  background-color: rgba(255, 255, 255, 0.86);
+  color: rgba(54, 54, 54, 0.688);
+  background-color: rgba(255, 255, 255, 0.832);
 }
 
 .list-group-item-semi-transparent.list-group-item-action:hover, .list-group-item-semi-transparent.list-group-item-action:focus {
-  color: rgba(68, 68, 68, 0.74);
-  background-color: rgba(242, 242, 242, 0.86);
+  color: rgba(54, 54, 54, 0.688);
+  background-color: rgba(242, 242, 242, 0.832);
 }
 
 .list-group-item-semi-transparent.list-group-item-action.active {
   color: #fff;
-  background-color: rgba(68, 68, 68, 0.74);
-  border-color: rgba(68, 68, 68, 0.74);
+  background-color: rgba(54, 54, 54, 0.688);
+  border-color: rgba(54, 54, 54, 0.688);
 }
 
 .close {
@@ -6532,12 +6480,6 @@ a.badge-semi-transparent:focus, a.badge-semi-transparent.focus {
   color: #000;
   text-shadow: 0 1px 0 #fff;
   opacity: .5;
-}
-
-@media (max-width: 1200px) {
-  .close {
-    font-size: calc(1.275rem + 0.3vw) ;
-  }
 }
 
 .close:hover {
@@ -7564,13 +7506,13 @@ button.bg-dribbble:focus {
 }
 
 .bg-semi-transparent {
-  background-color: rgba(255, 255, 255, 0.5) !important;
+  background-color: rgba(255, 255, 255, 0.4) !important;
 }
 
 a.bg-semi-transparent:hover, a.bg-semi-transparent:focus,
 button.bg-semi-transparent:hover,
 button.bg-semi-transparent:focus {
-  background-color: rgba(230, 230, 230, 0.5) !important;
+  background-color: rgba(230, 230, 230, 0.4) !important;
 }
 
 .bg-white {
@@ -7670,7 +7612,7 @@ button.bg-semi-transparent:focus {
 }
 
 .border-semi-transparent {
-  border-color: rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
 }
 
 .border-white {
@@ -12283,11 +12225,11 @@ a.text-dribbble:hover, a.text-dribbble:focus {
 }
 
 .text-semi-transparent {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.4) !important;
 }
 
 a.text-semi-transparent:hover, a.text-semi-transparent:focus {
-  color: rgba(217, 217, 217, 0.5) !important;
+  color: rgba(217, 217, 217, 0.4) !important;
 }
 
 .text-body {
@@ -12413,6 +12355,14 @@ a.text-semi-transparent:hover, a.text-semi-transparent:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.text-small {
+  font-size: 16px;
 }
 
 .text-blue {
@@ -12543,12 +12493,40 @@ a.text-semi-transparent:hover, a.text-semi-transparent:focus {
   border-width: 5rem !important;
 }
 
-.navbar .navbar-nav .nav-item.active {
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
+    background-color: #343a40;
+  }
+}
+
+.navbar .navbar-collapse .navbar-nav .nav-item.active .nav-link {
   color: #fe4240 !important;
 }
 
-.navbar .navbar-nav .nav-item .nav-link {
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse .navbar-nav .nav-item.active .nav-link {
+    color: #fff !important;
+  }
+}
+
+.navbar .navbar-collapse .navbar-nav .nav-item.active .nav-link.bg-semi-transparent {
+  background-color: #fe4240 !important;
+  color: #fff !important;
+}
+
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
   color: #fff;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+    color: #fff;
+  }
+}
+
+.navbar .navbar-collapse .navbar-nav .nav-item.dropdown.show a.bg-semi-transparent {
+  background-color: #fe4240 !important;
 }
 
 .navbar .navbar-form .search-box {
@@ -12619,6 +12597,12 @@ a.text-semi-transparent:hover, a.text-semi-transparent:focus {
      object-position: unset;
 }
 
+@media (max-width: 767.98px) {
+  .carousel .carousel-inner .carousel-item img {
+    height: 350px;
+  }
+}
+
 footer {
   background-color: #212529;
 }
@@ -12637,8 +12621,30 @@ footer ul li a:hover {
   text-decoration: none;
 }
 
-.text-small {
-  font-size: 16px;
+#watch-modal #trailer {
+  height: 512px;
+}
+
+@media (max-width: 991.98px) {
+  #watch-modal #trailer {
+    height: 315px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #watch-modal #trailer {
+    height: 315;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #movie-now {
+    margin-top: -8px;
+  }
+}
+
+#movie-now #movie-now-target #item:hover {
+  cursor: pointer;
 }
 
 .movie #title {
@@ -12683,6 +12689,20 @@ footer ul li a:hover {
 
 .shop .card:hover {
   cursor: pointer;
+}
+
+#shop-preview.card {
+  background-color: none !important;
+  border: none;
+}
+
+#shop-preview.card #shop-preview-nav {
+  margin-top: -40px !important;
+  margin-bottom: 5px;
+}
+
+#shop-preview.card #shop-preview-nav button {
+  margin-left: 5px;
 }
 
 .social-button {
