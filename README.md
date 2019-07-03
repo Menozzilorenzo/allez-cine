@@ -20,10 +20,10 @@
 
 ### Header and Footer (Fabien Desablens)
     - [x] Bootstrap Hamburger Menu.
-    - [x] Jumbotron for the header. Use CSS, Jquery or JS for          the slides.
+    - [x] Jumbotron for the header. Use CSS, Jquery or JS for the slides.
     - [x] Animated link buttons to social networks.
 
-    - [x] Create an arrow-shaped button at the bottom of the           page that moves the visitor's display back to                the header. JS only (with CSS stylizing).
+    - [x] Create an arrow-shaped button at the bottom of the page that moves the visitor's display back to the header. JS only (with CSS stylizing).
     - [x] Must be responsive.
 
 ### HTML Content (Vincent De Gheyndt)
@@ -46,8 +46,8 @@
     - [x] 
     - [x] Create a "more movies" button
 
-    - [x]
-    - [x] 
+    - [x] pop-up
+    - [x] map
 
     - [x] Must be responsive        
 
