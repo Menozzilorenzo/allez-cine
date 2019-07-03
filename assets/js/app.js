@@ -30,7 +30,7 @@ const Promises = {
 };
 
 const Settings = {
-  debug: false,
+  debug: true,
   api: {
     language: "en",
     key: "c0899f4d6321bdbd97b6173b1b1341d5",
@@ -67,7 +67,8 @@ if (!localStorage.privacyBanner) {
   privacyBanner.style.display = "none";
 }
 
-document.querySelector(".privacy-accept").addEventListener("click", () => {
+document.querySelector(".privacy-accept").addEventListener("click", event => {
+  event.preventDefault();
   privacyBanner.style.display = "none";
   localStorage.privacyBanner = true;
 });
@@ -184,7 +185,7 @@ Promises.movie.popular = TheMovieDB.request("movie/upcoming").then($response => 
   });
 
   footerLatestMovie($response.results, "#footer-latest-movie-target", "#footer-latest-movie-template", 4);
-  manageShop($response.results, "#shop-movies-target", "#shop-movies-template", 8, 16);
+  createShop($response.results, "#shop-movies-target", "#shop-movies-template", 8, 16);
 });
 
 Promises.movie.popular = TheMovieDB.request("movie/top_rated").then($response => {
@@ -227,58 +228,61 @@ const createCarousel = ($resources, $target, $template, $amount = 10) => {
     overview.innerHTML = $resource.overview;
     image.setAttribute("src", TheMovieDB.image($resource.backdrop_path, "original"));
 
-    TheMovieDB.request("movie/:id", {
-      id: $resource.id,
-      params: {
-        append_to_response: ["videos"]
-      }
-    }).then($response => {
-      let videos = $response.videos.results.filter(video => (video.site === "YouTube" && video.type === "Trailer" ? video : null));
-      if (videos.length >= 1) {
-        link.setAttribute("href", `https://www.youtube.com/watch?v=${videos[0].key}`);
-      } else {
-        link.classList.add("d-none");
-      }
+    link.setAttribute("data-toggle", "modal");
+    link.setAttribute("data-target", "#watch-modal");
+    link.setAttribute("title", $resource.title);
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      watchTrailer($resource.id);
     });
 
     target.appendChild(main);
   });
 };
 
-const manageShop = ($resources, $target, $template, $index = 0, $amount = 8, $cleanup = false) => {
+const createShop = ($resources, $target, $template, $index = 0, $amount = 8, $cleanup = false) => {
   let target = document.querySelector($target);
   let template = document.querySelector($template);
+  let displayed = 0;
 
   if ($cleanup) target.innerHTML = "";
-  attachPreview($resources[$index].id);
   $resources.slice($index, $amount).forEach($resource => {
+    displayed++;
     let main = template.cloneNode(true).content,
       div = main.querySelector("#shop-item"),
       title = main.querySelector("#title"),
       image = main.querySelector("img"),
       year = main.querySelector("#year"),
-      price = main.querySelector("#price");
+      price = main.querySelector("#price"),
+      random = Math.floor(Math.random() * 19.99) + 1.99;
+
+    if (displayed === 1) attachPreview($resources[$index].id, random);
 
     div.setAttribute("data-movie", $resource.id);
     title.innerHTML = $resource.title;
     image.setAttribute("src", TheMovieDB.image($resource.poster_path, "w300"));
     image.setAttribute("alt", $resource.title);
     year.innerHTML = $resource.release_date.substr(0, 4);
-    price.innerHTML = `${Math.floor(Math.random() * 29) + 15}$`;
+    price.innerHTML = `${random}$`;
 
-    div.addEventListener("click", event => attachPreview($resource.id, event));
+    div.addEventListener("click", event => {
+      attachPreview($resource.id, random);
+      window.location = "#shop-preview";
+    });
 
     target.appendChild(main);
   });
-
-  template.remove();
 };
 
-const attachPreview = ($id, $event) => {
+const attachPreview = ($id, $price) => {
   const preview = document.getElementById("shop-preview"),
     title = preview.querySelector("#title"),
     overview = preview.querySelector("#overview"),
-    trailer = preview.querySelector("iframe#trailer");
+    trailer = preview.querySelector("iframe#preview-trailer"),
+    image = preview.querySelector("img"),
+    release = preview.querySelector("#release"),
+    genres = preview.querySelector("#genres"),
+    price = preview.querySelector("#price");
 
   if (currentPreview != $id) {
     TheMovieDB.request("movie/:id", {
@@ -291,17 +295,22 @@ const attachPreview = ($id, $event) => {
 
       let videos = $response.videos.results.filter(video => (video.site === "YouTube" && video.type === "Trailer" ? video : null));
       if (videos.length >= 1) {
+        image.classList.add("d-none");
         trailer.classList.remove("d-none");
-        trailer.classList.add("d-block");
         trailer.setAttribute("src", `https://www.youtube-nocookie.com/embed/${videos[0].key}?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&color=white&controls=0&disablekb=1`);
       } else {
-        trailer.classList.remove("d-block");
+        image.classList.remove("d-none");
+        image.setAttribute("src", TheMovieDB.image($response.backdrop_path));
+        image.setAttribute("alt", $response.title);
+
         trailer.classList.add("d-none");
       }
 
       // Here, we inject the content in preview.
       if (title) title.innerHTML = $response.title;
       if (overview) overview.innerHTML = $response.overview;
+      if (release) release.innerHTML = new Date($response.release_date).toISOString().split("T")[0];
+      if (price && $price != null) price.innerHTML = `${$price}$`;
 
       // Set current preview has $id
       currentPreview = $id;
@@ -328,6 +337,7 @@ const listMovies = ($type, $resources, $target, $template, $extra, $index = 0, $
 
     if (title) title.innerHTML = $type === "movie" ? $resource.title : $resource.name;
     if (image) image.setAttribute("src", TheMovieDB.image($resource.poster_path, "w500"));
+    if (image) image.setAttribute("alt", $resource.title);
     if (year) year.appendChild(document.createTextNode($type === "movie" ? $resource.release_date.substr(0, 4) : $resource.first_air_date.substr(0, 4)));
     if ($resource.genre_ids.length >= 1) {
       if (genre) genre.appendChild(document.createTextNode($type === "movie" ? Genres.movie[$resource.genre_ids[0]] : Genres.serie[$resource.genre_ids[0]]));
@@ -416,6 +426,27 @@ const attachModal = ($id, $type) => {
   });
 };
 
+const watchTrailer = $id => {
+  let modal = document.getElementById("watch-modal"),
+    trailer = modal.querySelector("iframe#trailer");
+
+  TheMovieDB.request("movie/:id", {
+    id: $id,
+    params: {
+      append_to_response: ["videos"]
+    }
+  }).then($response => {
+    if (Settings.debug) console.log("Movie:Detail", $response);
+    let videos = $response.videos.results.filter(video => (video.site === "YouTube" && video.type === "Trailer" ? video : null));
+    if (videos.length >= 1) {
+      trailer.setAttribute("src", `https://www.youtube-nocookie.com/embed/${videos[0].key}?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&color=white&controls=0&disablekb=1&autoplay=1`);
+      $(modal).on("hidden.bs.modal", () => {
+        trailer.removeAttribute("src"); // When modal is closed, reset the src attribute.. it's used to ensure the trailer video stop when modal is closed
+      });
+    }
+  });
+};
+
 const footerLatestMovie = ($resources, $target, $template, $amount = 4) => {
   let target = document.querySelector($target);
   let template = document.querySelector($template);
@@ -426,6 +457,7 @@ const footerLatestMovie = ($resources, $target, $template, $amount = 4) => {
 
     title.innerHTML = $resource.title;
     image.setAttribute("src", TheMovieDB.image($resource.poster_path, "w300"));
+    image.setAttribute("alt", $resource.title);
 
     target.appendChild(main);
   });
@@ -501,8 +533,43 @@ const showMoreOrLess = ($btn, $selector) => {
 // EVENTS HANDLER
 //////////////////
 
+// FILTERS
 Array.from(document.querySelectorAll("#movie-featured-filter-target button")).forEach($btn => $btn.addEventListener("click", () => (filterByGenre($btn.getAttribute("data-genre"), $btn, ".movie", "movie"), false)));
 Array.from(document.querySelectorAll("#serie-featured-filter-target button")).forEach($btn => $btn.addEventListener("click", () => (filterByGenre($btn.getAttribute("data-genre"), $btn, ".serie", "serie"), false)));
 
+// MORE OR LESS
 document.getElementById("movie-featured-extra").addEventListener("click", () => showMoreOrLess("#movie-featured-extra", "#movie-featured-extra-content"));
 document.getElementById("serie-featured-extra").addEventListener("click", () => showMoreOrLess("#serie-featured-extra", "#serie-featured-extra-content"));
+
+// SHOP BUTTON
+let rightButton = document.getElementById("shop-right");
+rightButton.addEventListener("click", () => {
+  createShop(Movies.upComing, "#shop-movies-target", "#shop-movies-template", 0, 8, true);
+  rightButton.disabled = true;
+  leftButton.disabled = false;
+});
+
+let leftButton = document.getElementById("shop-left");
+leftButton.addEventListener("click", () => {
+  createShop(Movies.upComing, "#shop-movies-target", "#shop-movies-template", 8, 16, true);
+  rightButton.disabled = false;
+  leftButton.disabled = true;
+});
+
+// CONTACT US
+document.getElementById("form-contact").addEventListener("submit", event => {
+  event.preventDefault();
+
+  let modal = document.getElementById("contact-modal"),
+    name = modal.querySelector("#fullname"),
+    email = modal.querySelector("#email"),
+    subject = modal.querySelector("#subject"),
+    message = modal.querySelector("#message");
+
+  name.innerHTML = `${event.target[0].value} ${event.target[1].value}`;
+  email.innerHTML = event.target[2].value;
+  subject.innerHTML = event.target[3].value;
+  message.innerHTML = event.target[4].value;
+
+  $(modal).modal("show");
+});
