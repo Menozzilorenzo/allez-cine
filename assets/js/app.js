@@ -393,6 +393,18 @@ const attachPreview = ($id, $price) => {
       if (release) release.innerHTML = new Date($response.release_date).toISOString().split("T")[0];
       if (price && $price != null) price.innerHTML = `${$price}$`;
 
+      // If the genres are >= to 1, we inject all the genres by creating each span separately
+      if ($response.genres.length >= 1) {
+        $response.genres.forEach($genre => {
+          let span = document.createElement("span");
+          // span.classList.add("badge", "badge-default");
+          span.innerHTML = `${$genre.name} `;
+
+          // Append 'span' to 'genres'
+          genres.appendChild(span);
+        });
+      }
+
       // Set current preview has $id
       currentPreview = $id;
     });
