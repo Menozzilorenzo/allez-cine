@@ -12626,8 +12626,14 @@ html {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  html {
+  html html {
     scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body {
+    background-color: #e9ecef;
   }
 }
 
@@ -12657,13 +12663,25 @@ html {
   cursor: pointer;
 }
 
+.movie {
+  padding-top: 5px;
+  font-size: 14px;
+}
+
 .movie #title {
   font-size: 16px;
   margin-top: 8px;
 }
 
 .movie:hover {
+  background-color: #fe4240;
+  color: #fff !important;
   cursor: pointer;
+}
+
+.serie {
+  padding-top: 5px;
+  font-size: 14px;
 }
 
 .serie #title {
@@ -12672,6 +12690,8 @@ html {
 }
 
 .serie:hover {
+  background-color: #fe4240;
+  color: #fff !important;
   cursor: pointer;
 }
 
@@ -12699,6 +12719,12 @@ html {
 
 .shop .card:hover {
   cursor: pointer;
+  color: #fff;
+  background-color: #fe4240;
+}
+
+.shop .card:hover #price {
+  color: #fff !important;
 }
 
 #shop-preview.card {
