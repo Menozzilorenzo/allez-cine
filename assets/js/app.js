@@ -394,6 +394,7 @@ const attachPreview = ($id, $price) => {
       if (price && $price != null) price.innerHTML = `${$price}$`;
 
       // If the genres are >= to 1, we inject all the genres by creating each span separately
+      genres.innerHTML = "";
       if ($response.genres.length >= 1) {
         $response.genres.forEach($genre => {
           let span = document.createElement("span");
@@ -668,14 +669,12 @@ const footerTopRatedMovie = ($resources, $target, $template, $amount = 6) => {
 const filterByGenre = ($genre, $btn, $selector, $type) => {
   if ($type === "movie") {
     if (lastPushedMovieFilter !== undefined) {
-      lastPushedMovieFilter.classList.remove("btn-primary");
-      lastPushedMovieFilter.classList.add("btn-light");
+      lastPushedMovieFilter.classList.remove("active");
       lastPushedMovieFilter = undefined;
     }
   } else {
     if (lastPushedSerieFilter !== undefined) {
-      lastPushedSerieFilter.classList.remove("btn-primary");
-      lastPushedSerieFilter.classList.add("btn-light");
+      lastPushedSerieFilter.classList.remove("active");
       lastPushedSerieFilter = undefined;
     }
   }
@@ -683,8 +682,7 @@ const filterByGenre = ($genre, $btn, $selector, $type) => {
   document.querySelectorAll($selector).forEach(item => {
     item.classList.add("d-none");
     if (item.getAttribute("data-genre") == $genre || $genre == 0) {
-      $btn.classList.remove("btn-light");
-      $btn.classList.add("btn-primary");
+      $btn.classList.add("active");
       $type === "movie" ? (lastPushedMovieFilter = $btn) : (lastPushedSerieFilter = $btn);
       item.classList.remove("d-none");
     }
@@ -712,8 +710,8 @@ const showMoreOrLess = ($btn, $selector) => {
 //////////////////
 
 // FILTERS
-Array.from(document.querySelectorAll("#movie-featured-filter-target button")).forEach($btn => $btn.addEventListener("click", () => (filterByGenre($btn.getAttribute("data-genre"), $btn, ".movie", "movie"), false)));
-Array.from(document.querySelectorAll("#serie-featured-filter-target button")).forEach($btn => $btn.addEventListener("click", () => (filterByGenre($btn.getAttribute("data-genre"), $btn, ".serie", "serie"), false)));
+Array.from(document.querySelectorAll("#movie-featured-filter-target a")).forEach($btn => $btn.addEventListener("click", () => (filterByGenre($btn.getAttribute("data-genre"), $btn, ".movie", "movie"), false)));
+Array.from(document.querySelectorAll("#serie-featured-filter-target a")).forEach($btn => $btn.addEventListener("click", () => (filterByGenre($btn.getAttribute("data-genre"), $btn, ".serie", "serie"), false)));
 
 // MORE OR LESS
 document.getElementById("movie-featured-extra").addEventListener("click", () => showMoreOrLess("#movie-featured-extra", "#movie-featured-extra-content"));
@@ -737,22 +735,40 @@ leftButton.addEventListener("click", () => {
 });
 
 // CONTACT US
-document.getElementById("form-contact").addEventListener("submit", event => {
-  event.preventDefault(); // Disable default behavior.
+// document.getElementById("form-contact").addEventListener("submit", event => {
+//   event.preventDefault(); // Disable default behavior.
 
-  // Get all elements
-  let modal = document.getElementById("contact-modal"),
-    name = modal.querySelector("#fullname"),
-    email = modal.querySelector("#email"),
-    subject = modal.querySelector("#subject"),
-    message = modal.querySelector("#message");
+//   // Get all elements
+//   let modal = document.getElementById("contact-modal"),
+//     name = modal.querySelector("#fullname"),
+//     email = modal.querySelector("#email"),
+//     subject = modal.querySelector("#subject"),
+//     message = modal.querySelector("#message");
 
-  // Insert data in correct elements.
-  name.innerHTML = `${event.target[0].value} ${event.target[1].value}`;
-  email.innerHTML = event.target[2].value;
-  subject.innerHTML = event.target[3].value;
-  message.innerHTML = event.target[4].value;
+//   // Insert data in correct elements.
+//   name.innerHTML = `${event.target[0].value} ${event.target[1].value}`;
+//   email.innerHTML = event.target[2].value;
+//   subject.innerHTML = event.target[3].value;
+//   message.innerHTML = event.target[4].value;
 
-  // Showing the modal when all is ok..
-  $(modal).modal("show");
-});
+//   // Showing the modal when all is ok..
+//   $(modal).modal("show");
+// });
+
+function wawa() {
+  let first = document.querySelector("#first-name").value;
+  let Vfirst = document.querySelector("#firstnameValidate");
+  Vfirst.value = first;
+  let last = document.querySelector("#last-name").value;
+  let Vlast = document.querySelector("#lastnameValidate");
+  Vlast.value = last;
+  let mail = document.querySelector("#email").value;
+  let Vmail = document.querySelector("#emailValidate");
+  Vmail.value = mail;
+  let subj = document.querySelector("#subject").value;
+  let Vsubj = document.querySelector("#subjectValidate");
+  Vsubj.value = subj;
+  let txt = document.querySelector("#message").value;
+  let Vtxt = document.querySelector("#textAreaValidate");
+  Vtxt.value = txt;
+}
