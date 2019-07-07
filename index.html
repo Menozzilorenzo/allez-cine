@@ -185,17 +185,48 @@
           </section>
 
           <section class="row justify-content-center">
-            <div class="p-3 col-9">
-              <section class="btn-toolbar" role="toolbar" id="movie-featured-filter-target">
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="0">All</button>
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="28">Action</button>
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="12">Adventure</button>
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="27">Horror</button>
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="878">Science-Fiction</button>
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="16">Animation</button>
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="53">Thriller</button>
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="80">Crime</button>
-              </section>
+            <div class="p-3 col-9" id="movie-featured-filter-target">
+                <ul class="nav nav-pills d-none d-md-flex mb-3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false" data-genre="0">All</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-contact0" role="tab" aria-controls="pills-profile" aria-selected="false" data-genre="28">Action</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact1-tab" data-toggle="pill" href="#pills-contact1" role="tab" aria-controls="pills-contact" aria-selected="false" data-genre="12">Adventure</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact2-tab" data-toggle="pill" href="#pills-contact2" role="tab" aria-controls="pills-contact" aria-selected="false" data-genre="27">Horror</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact3-tab" data-toggle="pill" href="#pills-contact3" role="tab" aria-controls="pills-contact" aria-selected="false" data-genre="878">Science-Fiction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact4-tab" data-toggle="pill" href="#pills-contact4" role="tab" aria-controls="pills-contact" aria-selected="false" data-genre="16">Animation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact5-tab" data-toggle="pill" href="#pills-contact5" role="tab" aria-controls="pills-contact" aria-selected="false" data-genre="53">Thriller</a>
+                    </li>
+                </ul>
+
+                <ul class="d-md-none nav nav-tabs">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Genre
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" data-toggle="pill" href="#pills-home" data-genre="0">all</a>
+                          <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" data-toggle="pill" href="#pills" data-genre="28">Action</a>
+                              <a class="dropdown-item" data-toggle="pill" href="#pills" data-genre="12">Adventure</a>
+                              <a class="dropdown-item" data-toggle="pill" href="#pills" data-genre="27">Horror</a>
+                              <a class="dropdown-item" data-toggle="pill" href="#pills" data-genre="878">Science-Fiction</a>
+                              <a class="dropdown-item" data-toggle="pill" href="#pills" data-genre="16">Animation</a>
+                              <a class="dropdown-item" data-toggle="pill" href="#pills" data-genre="53">Thriller</a>
+                          </div>
+                  </li>
+                </ul>
             </div>
           </section>
 
@@ -233,13 +264,36 @@
           </section>
 
           <section class="row justify-content-center">
-            <div class="p-3 col-9">
-              <section class="btn-group" role="toolbar" id="serie-featured-filter-target">
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="0">All</button>
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="16">Animation</button>
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="18">Drama</button>
-                <button type="button" class="btn btn-light mr-1 mb-1" data-genre="80">Crime</button>
-              </section>
+            <div class="p-3 col-9" id="serie-featured-filter-target">
+              <ul class="nav nav-pills d-none d-md-flex mb-3" role="tablist">
+                  <li class="nav-item">
+                      <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false" data-genre="0">All</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" id="pills-contact4-tab" data-toggle="pill" href="#pills-contact4" role="tab" aria-controls="pills-contact" aria-selected="false" data-genre="16">Animation</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" id="pills-contact5-tab" data-toggle="pill" href="#pills-contact5" role="tab" aria-controls="pills-contact" aria-selected="false" data-genre="18">Drama</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" id="pills-contact6-tab" data-toggle="pill" href="#pills-contact6" role="tab" aria-controls="pills-contact" aria-selected="false" data-genre="80">Crime</a>
+                  </li>
+              </ul>
+
+              <ul class="d-md-none nav nav-tabs">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Genres
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" data-toggle="pill" href="#pills-home" data-genre="0">all</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" data-toggle="pill" href="#pills" data-genre="18">Drama</a>
+                      <a class="dropdown-item" data-toggle="pill" href="#pills" data-genre="16">Animation</a>
+                      <a class="dropdown-item" data-toggle="pill" href="#pills" data-genre="80">Crime</a>
+                    </div>
+                </li>
+              </ul>
             </div>
           </section>
 
@@ -390,7 +444,7 @@
                     </div>
                     <div class="form-row">
                       <div class="col-12 col-md-2">
-                        <button id="send-message" type="submit" class="btn btn-primary btn-block">SEND MESSAGE</button>
+                        <button type="button" class="btn btn-primary more" value="Submit" onclick="wawa()" data-toggle="modal" data-target="#exampleModalCenter2"><i class="far fa-paper-plane"></i>&nbsp; SEND MESSAGE</button>
                       </div>
                     </div>
                   </form>
@@ -666,9 +720,54 @@
         </div>
       </div>
     </div>
+    <!--modal2-->
+    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Validate request</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body request">
+              <form>
+                  <form>
+                      <div class="form-group row">
+                          <div class="col-sm-6">
+                              <input type="text" class="form-control" id="firstnameValidate" placeholder="FIRST NAME">
+                          </div>
+                          <div class="col-sm-6">
+                              <input type="text" class="form-control" id="lastnameValidate" placeholder="LAST NAME">
+                          </div>
+                      </div>
+                      <div class="form-group row">                
+                          <div class="col-sm-6">
+                              <input type="text" class="form-control" id="emailValidate" placeholder="EMAIL">
+                          </div>
+                          <div class="col-sm-6">
+                              <input type="text" class="form-control" id="subjectValidate" placeholder="SUBJECT">
+                          </div>
+                      </div>  
+                      <div class="form-group row">
+                          <div class="col-sm-12">
+                              <textarea class="form-control" id="textAreaValidate" rows="3" placeholder="YOUR MESSAGE"></textarea>
+                          </div>
+                      </div>                
+                  </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary">Send request</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
 
     <!-- JS FILES -->
     <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/popper.js"></script>
     <script src="https://unpkg.com/bootstrap"></script>
     <script src="https://kit.fontawesome.com/efb976df6a.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=fetch"></script>
